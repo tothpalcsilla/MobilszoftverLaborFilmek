@@ -40,7 +40,7 @@ class ItemListActivity : AppCompatActivity() {
         toolbar.title = title
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "My action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
 
