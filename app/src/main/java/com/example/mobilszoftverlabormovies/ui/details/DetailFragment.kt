@@ -1,4 +1,4 @@
-package com.example.mobilszoftverlabormovies
+package com.example.mobilszoftverlabormovies.ui.details
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.mobilszoftverlabormovies.R
 import com.example.mobilszoftverlabormovies.dummy.DummyContent
 
 /**
@@ -15,7 +16,7 @@ import com.example.mobilszoftverlabormovies.dummy.DummyContent
  * in two-pane mode (on tablets) or a [ItemDetailActivity]
  * on handsets.
  */
-class ItemDetailFragment : Fragment() {
+class DetailFragment : Fragment() {
 
     /**
      * The dummy content this fragment is presenting.
