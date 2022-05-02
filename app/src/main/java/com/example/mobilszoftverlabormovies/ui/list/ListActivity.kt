@@ -1,6 +1,10 @@
 package com.example.mobilszoftverlabormovies.ui.list
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +21,8 @@ import com.example.mobilszoftverlabormovies.ui.details.DetailActivity
 import kotlin.collections.List
 
 class ListActivity : AppCompatActivity() {
+
+    private val listViewModel: ListViewModel = ListViewModel(this.application)
     private var twoPane: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
