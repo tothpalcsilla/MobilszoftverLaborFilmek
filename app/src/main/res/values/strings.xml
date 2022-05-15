@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Movies</string>
+    <string name="database">MobilszoftverMovies.db</string>
     <string name="title_item_detail">Movie Detail</string>
 </resources>
