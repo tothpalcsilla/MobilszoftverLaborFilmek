@@ -10,7 +10,7 @@ interface MoviesApi {
     // leírja az api hívásokat
 
     // Filmek listája
-    /*@GET("/search/movie")
+    @GET("/search/movie")
     fun getAllMovies(@Query("api_key") api_key: String,
                      @Query("query") query: String,
                      @Query("language") language: String,
@@ -43,5 +43,5 @@ interface MoviesApi {
 
     // DELETE
     fun deleteMovie(movie: Movie)
-    fun deleteAllMovies()*/
+    fun deleteAllMovies()
 }

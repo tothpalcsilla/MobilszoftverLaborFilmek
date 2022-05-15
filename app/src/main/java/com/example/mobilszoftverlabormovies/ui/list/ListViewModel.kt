@@ -11,6 +11,6 @@ class ListViewModel(application: Application) : AndroidViewModel(application) {
     private val movieList: List<Movie> = repository.movieList
 
     fun getLatestMovies() {
-        //repository.getLatestMovies()
+        repository.getLatestMovies()
     }
 }

@@ -3,7 +3,7 @@ package com.example.mobilszoftverlabormovies.model.network
 import com.example.mobilszoftverlabormovies.model.Movie
 import com.squareup.moshi.JsonClass
 
-//@JsonClass(generateAdapter = true)
+@JsonClass(generateAdapter = true)
 data class MovieListApiResponseModel
     (
     val page: Int,
@@ -12,7 +12,7 @@ data class MovieListApiResponseModel
     val total_pages: Int
 )
 
-//@JsonClass(generateAdapter = true)
+@JsonClass(generateAdapter = true)
 data class MovieApiResponseModel(
     val poster_path: String?,
     val adult: Boolean,

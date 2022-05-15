@@ -18,16 +18,16 @@ class MoviesRepository {
 
     private var isOnline: Boolean = Config.isOnline
     private val movieDao: MovieDao = DatabaseModule
-    private val movieApi: MoviesApi = ApiModule
+    //private val movieApi: MoviesApi = ApiModule
 
-    /*private val movieApi: MoviesApi =
-        ApiModule.provideMoviesApi(ApiModule.provideRetrofit(ApiModule.provideOkHttpClient()))*/
+    private val movieApi: MoviesApi =
+        ApiModule.provideMoviesApi(ApiModule.provideRetrofit(ApiModule.provideOkHttpClient()))
 
     var movieList: List<Movie> = emptyList()
 
     fun getAllMovies() {
         if (isOnline) {
-            /*val movieCall: Call<MovieListApiResponseModel> = movieApi.getAllMovies(
+            val movieCall: Call<MovieListApiResponseModel> = movieApi.getAllMovies(
                 api_key = Config.API_KEY,
                 language = "hu-HU",
                 include_adult = false,
@@ -50,13 +50,13 @@ class MoviesRepository {
                         movieList = emptyList()
                     }
                 }
-            })*/
+            })
         } else {
             movieList = movieDao.getAllMovies()
         }
     }
 
-    /*fun getLatestMovies(): List<Movie> {
+    fun getLatestMovies(): List<Movie> {
         val movieList: List<Movie> = if (isOnline) {
             movieApi.getLatestMovies()
         } else {
@@ -140,5 +140,5 @@ class MoviesRepository {
             movieApi.deleteAllMovies()
         }
         return movieDao.deleteAllMovies()
-    }*/
+    }
 }

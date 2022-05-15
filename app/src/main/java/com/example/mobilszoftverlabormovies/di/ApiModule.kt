@@ -20,7 +20,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object ApiModule : MoviesApi{
-    /*override fun getAllMovies(
+    override fun getAllMovies(
         @Query(value = "api_key") api_key: String,
         @Query(value = "query") query: String,
         @Query(value = "language") language: String,
@@ -91,5 +91,5 @@ object ApiModule : MoviesApi{
     @Singleton
     fun provideMoviesApi(retrofit: Retrofit): MoviesApi {
         return retrofit.create(MoviesApi::class.java)
-    }*/
+    }
 }
