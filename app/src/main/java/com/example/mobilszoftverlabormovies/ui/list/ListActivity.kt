@@ -17,12 +17,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mobilszoftverlabormovies.ui.details.DetailFragment
 import com.example.mobilszoftverlabormovies.R
 import com.example.mobilszoftverlabormovies.dummy.DummyContent
+import com.example.mobilszoftverlabormovies.network.MoviesApi
 import com.example.mobilszoftverlabormovies.ui.details.DetailActivity
 import kotlin.collections.List
 
 class ListActivity : AppCompatActivity() {
 
-    private val listViewModel: ListViewModel = ListViewModel(this.application)
     private var twoPane: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {

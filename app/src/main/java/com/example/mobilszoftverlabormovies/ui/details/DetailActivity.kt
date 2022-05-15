@@ -10,8 +10,6 @@ import com.example.mobilszoftverlabormovies.ui.list.ListViewModel
 
 class DetailActivity : AppCompatActivity() {
 
-    private val detailViewModel: DetailsViewModel = DetailsViewModel(this.application, "asd123") //TODO
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_detail)
