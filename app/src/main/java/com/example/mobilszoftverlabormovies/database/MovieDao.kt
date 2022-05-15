@@ -29,19 +29,19 @@ interface MovieDao {
     fun getMovie(movie_id: String): Movie
 
     // CREATE
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     fun insertMovie(movie: Movie): Long
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     fun insertMoviesList(movies: List<Movie>): List<Long>
 
     // POST
-    @Update(onConflict = OnConflictStrategy.REPLACE)
+    @Update
     fun updateMovie(movie: Movie)
 
     // DELETE
-    @Query("DELETE FROM Movie WHERE id = :movie_id")
-    fun deleteMovie(movie_id: String)
+    @Delete
+    fun deleteMovie(movie: Movie)
 
     @Query("DELETE FROM Movie")
     fun deleteAllMovies()

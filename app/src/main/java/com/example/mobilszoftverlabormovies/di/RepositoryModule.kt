@@ -17,11 +17,11 @@ object RepositoryModule {
     @ViewModelScoped
     fun provideMainRepository(
         movieApi: MoviesApi,
-        //moviesDao: MovieDao
+        moviesDao: MovieDao
     ): ListRepository {
         return ListRepository(
-            movieApi
-            //,moviesDao
+            movieApi,
+            moviesDao
         )
     }
 }
