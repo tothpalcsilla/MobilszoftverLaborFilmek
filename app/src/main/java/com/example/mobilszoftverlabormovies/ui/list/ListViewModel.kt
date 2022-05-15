@@ -8,9 +8,9 @@ import com.example.mobilszoftverlabormovies.model.Movie
 class ListViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository : MoviesRepository = MoviesRepository()
-    private val movieList: List<Movie> = repository.getAllMovies()
+    private val movieList: List<Movie> = repository.movieList
 
     fun getLatestMovies() {
-        repository.getLatestMovies()
+        //repository.getLatestMovies()
     }
 }

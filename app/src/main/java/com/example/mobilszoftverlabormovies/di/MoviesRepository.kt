@@ -1,16 +1,16 @@
 package com.example.mobilszoftverlabormovies.di
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
 import com.example.mobilszoftverlabormovies.Config
 import com.example.mobilszoftverlabormovies.database.MovieDao
 import com.example.mobilszoftverlabormovies.model.Movie
+import com.example.mobilszoftverlabormovies.model.network.MovieListApiResponseModel
 import com.example.mobilszoftverlabormovies.network.MoviesApi
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -20,17 +20,43 @@ class MoviesRepository {
     private val movieDao: MovieDao = DatabaseModule
     private val movieApi: MoviesApi = ApiModule
 
-    fun getAllMovies(): List<Movie> {
-        val movieList: List<Movie> = if (isOnline) {
-            movieApi.getAllMovies()
+    /*private val movieApi: MoviesApi =
+        ApiModule.provideMoviesApi(ApiModule.provideRetrofit(ApiModule.provideOkHttpClient()))*/
+
+    var movieList: List<Movie> = emptyList()
+
+    fun getAllMovies() {
+        if (isOnline) {
+            /*val movieCall: Call<MovieListApiResponseModel> = movieApi.getAllMovies(
+                api_key = Config.API_KEY,
+                language = "hu-HU",
+                include_adult = false,
+                page = 1,
+                query = "2022"
+            )
+
+            movieCall.enqueue(object : Callback<MovieListApiResponseModel> {
+                override fun onFailure(call: Call<MovieListApiResponseModel>, t: Throwable) {
+                    //TODO set a textField.text = t.message
+                }
+
+                override fun onResponse(call: Call<MovieListApiResponseModel>, response: Response<MovieListApiResponseModel>) {
+                    val responseData = response.body()
+                    val movieListResult: List<Movie>? = responseData?.results
+                    if(movieListResult != null){
+                        insertMoviesListToDb(movieListResult)
+                        movieList = movieListResult
+                    } else {
+                        movieList = emptyList()
+                    }
+                }
+            })*/
         } else {
-            movieDao.getAllMovies()
+            movieList = movieDao.getAllMovies()
         }
-        insertMoviesListToDb(movieList)
-        return movieList
     }
 
-    fun getLatestMovies(): List<Movie> {
+    /*fun getLatestMovies(): List<Movie> {
         val movieList: List<Movie> = if (isOnline) {
             movieApi.getLatestMovies()
         } else {
@@ -114,5 +140,5 @@ class MoviesRepository {
             movieApi.deleteAllMovies()
         }
         return movieDao.deleteAllMovies()
-    }
+    }*/
 }
