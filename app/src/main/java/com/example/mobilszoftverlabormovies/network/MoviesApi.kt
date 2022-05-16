@@ -22,9 +22,9 @@ interface MoviesApi {
     @GET("/movie/{movie_id}")
     fun getMovie(
         @Query("movie_id") movie_id: String,
-        @Query("query") query: String,
+        //@Query("query") query: String,
         @Query("language") language: String,
-        @Query("append_to_response") append_to_response: String
+        //@Query("append_to_response") append_to_response: String
     ): Movie
 
     // Top rated

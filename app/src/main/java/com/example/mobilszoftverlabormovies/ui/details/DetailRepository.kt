@@ -21,7 +21,7 @@ class DetailRepository @Inject constructor(
 
     fun getMovie(movie_id: String): Movie {
         val movie: Movie = if (isOnline) {
-            movieApi.getMovie(movie_id)
+            movieApi.getMovie(movie_id= movie_id, language = Config.LANGUAGE)
         } else {
             movieDao.getMovie(movie_id)
         }
