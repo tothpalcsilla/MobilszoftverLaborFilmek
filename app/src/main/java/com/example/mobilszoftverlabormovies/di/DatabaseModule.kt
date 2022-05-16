@@ -1,51 +1,36 @@
 package com.example.mobilszoftverlabormovies.di
 
+import android.app.Application
+import androidx.room.Room
+import com.example.mobilszoftverlabormovies.database.AppDatabase
 import com.example.mobilszoftverlabormovies.database.MovieDao
-import com.example.mobilszoftverlabormovies.model.Movie
+import com.example.mobilszoftverlabormovies.R
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DatabaseModule : MovieDao {
-    override fun getAllMovies(): List<Movie> {
-        TODO("Not yet implemented")
+object DatabaseModule {
+
+    @Provides
+    @Singleton
+    fun provideAppDatabase(application: Application): AppDatabase {
+        return Room
+            .databaseBuilder(
+                application,
+                AppDatabase::class.java,
+                application.getString(R.string.database)
+            )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
-    override fun getLatestMovies(): List<Movie> {
-        TODO("Not yet implemented")
-    }
-
-    override fun getPopularMovies(): List<Movie> {
-        TODO("Not yet implemented")
-    }
-
-    override fun getNowPlayingMovies(): List<Movie> {
-        TODO("Not yet implemented")
-    }
-
-    override fun getMovie(movie_id: String): Movie {
-        TODO("Not yet implemented")
-    }
-
-    override fun insertMovie(movie: Movie): Long {
-        TODO("Not yet implemented")
-    }
-
-    override fun insertMoviesList(movies: List<Movie>): List<Long> {
-        TODO("Not yet implemented")
-    }
-
-    override fun updateMovie(movie: Movie) {
-        TODO("Not yet implemented")
-    }
-
-    override fun deleteMovie(movie: Movie) {
-        TODO("Not yet implemented")
-    }
-
-    override fun deleteAllMovies() {
-        TODO("Not yet implemented")
+    @Provides
+    @Singleton
+    fun providePosterDao(appDatabase: AppDatabase): MovieDao {
+        return appDatabase.movieDao()
     }
 }

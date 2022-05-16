@@ -1,16 +1,19 @@
 package com.example.mobilszoftverlabormovies.ui.list
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import com.example.mobilszoftverlabormovies.di.MoviesRepository
+import androidx.lifecycle.ViewModel
 import com.example.mobilszoftverlabormovies.model.Movie
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class ListViewModel(application: Application) : AndroidViewModel(application) {
+@HiltViewModel
+class ListViewModel @Inject constructor(
+    listRepository: ListRepository
+) : ViewModel() {
 
-    private val repository : MoviesRepository = MoviesRepository()
-    private val movieList: List<Movie> = repository.getAllMovies()
+    var movieList: List<Movie> = listRepository.movieList
 
-    fun getLatestMovies() {
-        repository.getLatestMovies()
+    init {
+        listRepository.getAllMovies()
+        movieList = listRepository.movieList
     }
 }

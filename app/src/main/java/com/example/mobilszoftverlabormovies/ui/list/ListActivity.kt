@@ -1,29 +1,26 @@
 package com.example.mobilszoftverlabormovies.ui.list
 
-import android.content.Context
 import android.content.Intent
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobilszoftverlabormovies.ui.details.DetailFragment
 import com.example.mobilszoftverlabormovies.R
-import com.example.mobilszoftverlabormovies.dummy.DummyContent
+import com.example.mobilszoftverlabormovies.model.Movie
 import com.example.mobilszoftverlabormovies.ui.details.DetailActivity
 import kotlin.collections.List
 
 class ListActivity : AppCompatActivity() {
 
-    private val listViewModel: ListViewModel = ListViewModel(this.application)
     private var twoPane: Boolean = false
+    private val moviesViewModel: ListViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,11 +42,11 @@ class ListActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
-        recyclerView.adapter = SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, twoPane)
+        recyclerView.adapter = SimpleItemRecyclerViewAdapter(this, moviesViewModel.movieList, twoPane)
     }
 
     class SimpleItemRecyclerViewAdapter(private val parentActivity: ListActivity,
-                                        private val values: List<DummyContent.DummyItem>,
+                                        private val values: List<Movie>,
                                         private val twoPane: Boolean) :
         RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder>() {
 
@@ -57,14 +54,14 @@ class ListActivity : AppCompatActivity() {
 
         init {
             onClickListener = View.OnClickListener { v ->
-                val item = v.tag as DummyContent.DummyItem
+                val item = v.tag as Movie
                 if (twoPane) {
                     val fragment = DetailFragment()
                         .apply {
-                        arguments = Bundle().apply {
-                            putString(DetailFragment.ARG_ITEM_ID, item.id)
+                            arguments = Bundle().apply {
+                                putString(DetailFragment.ARG_ITEM_ID, item.id.toString())
+                            }
                         }
-                    }
                     parentActivity.supportFragmentManager
                         .beginTransaction()
                         .replace(R.id.item_detail_container, fragment)
@@ -86,8 +83,8 @@ class ListActivity : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val item = values[position]
-            holder.idView.text = item.id
-            holder.contentView.text = item.content
+            holder.idView.text = item.id.toString()
+            holder.contentView.text = item.title
 
             with(holder.itemView) {
                 tag = item

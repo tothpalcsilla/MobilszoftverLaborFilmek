@@ -1,20 +1,13 @@
 package com.example.mobilszoftverlabormovies.ui.details
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import com.example.mobilszoftverlabormovies.di.MoviesRepository
-import com.example.mobilszoftverlabormovies.model.Movie
+import androidx.lifecycle.ViewModel
+import com.example.mobilszoftverlabormovies.ui.list.DetailRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class DetailsViewModel(application: Application, movieId: String) : AndroidViewModel(application) {
+@HiltViewModel
+class DetailViewModel @Inject constructor(
+    private val detailRepository: DetailRepository
+) : ViewModel() {
 
-    private val repository : MoviesRepository = MoviesRepository()
-    private val movie: Movie = repository.getMovie(movieId)
-
-    fun insert() {
-        repository.insertMovie(movie)
-    }
-
-    fun delete() {
-        repository.deleteMovie(movie)
-    }
 }
