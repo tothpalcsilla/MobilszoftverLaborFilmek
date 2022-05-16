@@ -9,20 +9,16 @@ interface MovieDao {
     // leírja az adatbázis kéréseket
 
     // GET
-    // Premierek
-    // Népszerűek
-    // Most játszottak
-
     @Query("SELECT * FROM Movie")
     fun getAllMovies(): List<Movie>
-
-    @Query("SELECT * FROM Movie")
+    // Top rated
+    @Query("SELECT * FROM Movie ORDER BY vote_average")
     fun getLatestMovies(): List<Movie>
-
-    @Query("SELECT * FROM Movie")
+    // Népszerűek
+    @Query("SELECT * FROM Movie ORDER BY popularity")
     fun getPopularMovies(): List<Movie>
-
-    @Query("SELECT * FROM Movie")
+    // Most játszottak
+    @Query("SELECT * FROM Movie ORDER BY release_date")
     fun getNowPlayingMovies(): List<Movie>
 
     @Query("SELECT * FROM Movie WHERE id = :movie_id")

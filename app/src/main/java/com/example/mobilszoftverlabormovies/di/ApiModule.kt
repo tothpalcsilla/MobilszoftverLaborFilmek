@@ -32,7 +32,7 @@ object NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl(Config.base_url)
+            .baseUrl(Config.API_URL)
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
     }

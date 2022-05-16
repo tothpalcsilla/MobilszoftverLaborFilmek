@@ -22,8 +22,7 @@ class ListRepository @Inject constructor(
     fun getAllMovies() {
         if (isOnline) {
             val movieCall: Call<MovieListApiResponseModel> = movieApi.getAllMovies(
-                api_key = Config.API_KEY,
-                language = "hu-HU",
+                language = Config.LANGUAGE,
                 include_adult = false,
                 page = 1,
                 query = "2022"
@@ -52,7 +51,7 @@ class ListRepository @Inject constructor(
 
     fun getLatestMovies(): List<Movie> {
         val movieList: List<Movie> = if (isOnline) {
-            movieApi.getLatestMovies()
+            movieApi.getLatestMovies(language = Config.LANGUAGE, page = 1)
         } else {
             movieDao.getLatestMovies()
         }
@@ -62,7 +61,7 @@ class ListRepository @Inject constructor(
 
     fun getPopularMovies(): List<Movie> {
         val movieList: List<Movie> = if (isOnline) {
-            movieApi.getPopularMovies()
+            movieApi.getPopularMovies(language = Config.LANGUAGE, page = 1)
         } else {
             movieDao.getPopularMovies()
         }
@@ -72,7 +71,7 @@ class ListRepository @Inject constructor(
 
     fun getNowPlayingMovies(): List<Movie> {
         val movieList: List<Movie> = if (isOnline) {
-            movieApi.getNowPlayingMovies()
+            movieApi.getNowPlayingMovies(language = Config.LANGUAGE, page = 1)
         } else {
             movieDao.getNowPlayingMovies()
         }
@@ -80,22 +79,11 @@ class ListRepository @Inject constructor(
         return movieList
     }
 
-
-    fun insertMoviesList(movies: List<Movie>): List<Long> {
-        if (isOnline) {
-            movieApi.insertMoviesList(movies)
-        }
-        return insertMoviesListToDb(movies)
-    }
-
     fun insertMoviesListToDb(movies: List<Movie>): List<Long> {
         return movieDao.insertMoviesList(movies)
     }
 
-    fun deleteAllMovies() {
-        if (isOnline) {
-            movieApi.deleteAllMovies()
-        }
+    fun deleteAllMoviesFromDb() {
         return movieDao.deleteAllMovies()
     }
 }

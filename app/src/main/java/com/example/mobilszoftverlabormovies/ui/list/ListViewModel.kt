@@ -10,5 +10,10 @@ class ListViewModel @Inject constructor(
     listRepository: ListRepository
 ) : ViewModel() {
 
-    val movieList: List<Movie> = listRepository.movieList
+    var movieList: List<Movie> = listRepository.movieList
+
+    init {
+        listRepository.getAllMovies()
+        movieList = listRepository.movieList
+    }
 }
