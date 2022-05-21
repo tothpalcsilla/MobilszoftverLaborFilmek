@@ -3,11 +3,21 @@ package com.example.mobilszoftverlabormovies.network
 import com.example.mobilszoftverlabormovies.model.Movie
 import com.example.mobilszoftverlabormovies.model.network.MovieListApiResponseModel
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface MoviesApi {
     // leírja az api hívásokat
+
+    // Filmek listája
+    @GET("/search/movie")
+    fun getMovies(
+        @Query("query") query: String,
+        @Query("language") language: String,
+        @Query("page") page: Int,
+        @Query("include_adult") include_adult: Boolean
+    ): Response<MovieListApiResponseModel>
 
     // Filmek listája
     @GET("/search/movie")

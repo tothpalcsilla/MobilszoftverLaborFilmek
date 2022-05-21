@@ -15,7 +15,7 @@ object RepositoryModule {
 
     @Provides
     @ViewModelScoped
-    fun provideMainRepository(
+    fun provideListRepository(
         movieApi: MoviesApi,
         moviesDao: MovieDao
     ): ListRepository {

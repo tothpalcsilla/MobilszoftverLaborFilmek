@@ -6,6 +6,11 @@ import com.example.mobilszoftverlabormovies.database.MovieDao
 import com.example.mobilszoftverlabormovies.model.Movie
 import com.example.mobilszoftverlabormovies.model.network.MovieListApiResponseModel
 import com.example.mobilszoftverlabormovies.network.MoviesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onStart
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,7 +24,36 @@ class ListRepository @Inject constructor(
     private var isOnline: Boolean = Config.isOnline
     var movieList: List<Movie> = Collections.emptyList()
 
-    fun getAllMovies() {
+    @WorkerThread
+    fun loadMovies(
+        onStart: () -> Unit,
+        onCompletion: () -> Unit,
+        onError: (String) -> Unit
+    ) = flow {
+        val movies: List<Movie> = movieDao.getAllMovies()
+        if (movies.isEmpty()) {
+            // request API network call asynchronously.
+            val response: Response<MovieListApiResponseModel> = movieApi.getMovies(language = Config.LANGUAGE,
+                include_adult = false,
+                page = 1,
+                query = "2022")
+            if(response.isSuccessful){
+                val responseData = response.body()
+                val movieListResult: List<Movie>? = responseData?.results
+                if(movieListResult != null){
+                    insertMoviesListToDb(movieListResult)
+                    movieList = movieListResult
+                    emit(movieList)
+                } else {
+                    movieList = Collections.emptyList()
+                }
+            }
+        } else {
+            emit(movies)
+        }
+    }.onStart { onStart() }.onCompletion { onCompletion() }.flowOn(Dispatchers.IO)
+
+    /*fun getAllMovies() {
         if (isOnline) {
             val movieCall: Call<MovieListApiResponseModel> = movieApi.getAllMovies(
                 language = Config.LANGUAGE,
@@ -47,7 +81,7 @@ class ListRepository @Inject constructor(
         } else {
             movieList = movieDao.getAllMovies()
         }
-    }
+    }*/
 
     fun getLatestMovies(): List<Movie> {
         val movieList: List<Movie> = if (isOnline) {
