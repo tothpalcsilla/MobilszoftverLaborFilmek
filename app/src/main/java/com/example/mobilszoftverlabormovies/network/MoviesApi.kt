@@ -11,16 +11,17 @@ interface MoviesApi {
     // leírja az api hívásokat
 
     // Filmek listája
-    @GET("/search/movie")
+    @GET("/3/search/movie")
     fun getMovies(
+        @Query("api_key") api_key: String,
         @Query("query") query: String,
         @Query("language") language: String,
         @Query("page") page: Int,
         @Query("include_adult") include_adult: Boolean
-    ): Response<MovieListApiResponseModel>
+    ): Call<MovieListApiResponseModel>
 
     // Filmek listája
-    @GET("/search/movie")
+    @GET("/3/search/movie")
     fun getAllMovies(
         @Query("query") query: String,
         @Query("language") language: String,
@@ -31,7 +32,7 @@ interface MoviesApi {
     // Film részletei
     @GET("/movie/{movie_id}")
     fun getMovie(
-        @Query("movie_id") movie_id: String,
+        @Query("movie_id") movie_id: Long,
         //@Query("query") query: String,
         @Query("language") language: String,
         //@Query("append_to_response") append_to_response: String

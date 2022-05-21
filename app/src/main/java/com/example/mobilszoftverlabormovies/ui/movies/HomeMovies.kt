@@ -31,7 +31,7 @@ fun HomeMovies(
         modifier = modifier
             .statusBarsPadding()
             .verticalScroll(rememberScrollState())
-            //.background(MaterialTheme.colors.background)
+            .background(MaterialTheme.colors.background)
     ) {
         movies.forEach { movie ->
             HomeMovie(

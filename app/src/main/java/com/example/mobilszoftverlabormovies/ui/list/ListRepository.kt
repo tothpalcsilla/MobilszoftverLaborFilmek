@@ -33,11 +33,13 @@ class ListRepository @Inject constructor(
         val movies: List<Movie> = movieDao.getAllMovies()
         if (movies.isEmpty()) {
             // request API network call asynchronously.
-            val response: Response<MovieListApiResponseModel> = movieApi.getMovies(language = Config.LANGUAGE,
+            val response = movieApi.getMovies(
+                api_key = Config.API_KEY,
+                language = Config.LANGUAGE,
                 include_adult = false,
                 page = 1,
                 query = "2022")
-            if(response.isSuccessful){
+            /*if(response.isSuccessful){
                 val responseData = response.body()
                 val movieListResult: List<Movie>? = responseData?.results
                 if(movieListResult != null){
@@ -47,7 +49,24 @@ class ListRepository @Inject constructor(
                 } else {
                     movieList = Collections.emptyList()
                 }
-            }
+            }*/
+            response.enqueue(object : Callback<MovieListApiResponseModel> {
+                override fun onFailure(call: Call<MovieListApiResponseModel>, t: Throwable) {
+                    movieList = Collections.emptyList()
+                }
+
+                override fun onResponse(call: Call<MovieListApiResponseModel>, response: Response<MovieListApiResponseModel>) {
+                    val responseData = response.body()
+                    val movieListResult: List<Movie>? = responseData?.results
+                    if(movieListResult != null){
+                        insertMoviesListToDb(movieListResult)
+                        movieList = movieListResult
+                    } else {
+                        movieList = Collections.emptyList()
+                    }
+                }
+            })
+            emit(movieList)
         } else {
             emit(movies)
         }

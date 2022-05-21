@@ -22,7 +22,7 @@ interface MovieDao {
     fun getNowPlayingMovies(): List<Movie>
 
     @Query("SELECT * FROM Movie WHERE id = :movie_id")
-    fun getMovie(movie_id: String): Movie
+    fun getMovie(movie_id: Long): Movie
 
     // CREATE
     @Insert

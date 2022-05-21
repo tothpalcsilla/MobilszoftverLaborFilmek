@@ -44,14 +44,15 @@ fun Movies(
             val modifier = Modifier.padding(innerPadding)
             HomeMovies(modifier, movies, selectMovie)
         }
-        CircularProgressIndicator(
+        if(isLoading) CircularProgressIndicator(
             modifier = Modifier
                 .constrainAs(progress) {
                     top.linkTo(parent.top)
                     bottom.linkTo(parent.bottom)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
-                }
+                },
+            color = Color.White
         )
     }
 }
@@ -61,7 +62,7 @@ fun Movies(
 private fun MovieAppBar() {
     TopAppBar(
         elevation = 6.dp,
-        backgroundColor = Color.Green,
+        backgroundColor = Color.Black,
         modifier = Modifier.height(58.dp)
     ) {
         Text(

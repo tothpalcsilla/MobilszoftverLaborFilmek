@@ -24,13 +24,14 @@ object DatabaseModule {
                 AppDatabase::class.java,
                 application.getString(R.string.database)
             )
+            .allowMainThreadQueries()
             .fallbackToDestructiveMigration()
             .build()
     }
 
     @Provides
     @Singleton
-    fun providePosterDao(appDatabase: AppDatabase): MovieDao {
+    fun provideMovieDao(appDatabase: AppDatabase): MovieDao {
         return appDatabase.movieDao()
     }
 }
