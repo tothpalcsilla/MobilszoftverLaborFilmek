@@ -38,6 +38,7 @@ fun MovieDetails(
     viewModel: DetailViewModel,
     pressOnBack: () -> Unit = {}
 ) {
+
     LaunchedEffect(key1 = movieId) {
         viewModel.loadMovieById(movieId)
     }
@@ -56,7 +57,7 @@ private fun MovieDetailsBody(
     Column(
         modifier = Modifier
             .verticalScroll(rememberScrollState())
-            .fillMaxHeight()
+            .fillMaxSize()
             .background(color = colorResource(R.color.bluegray_800))
     ) {
 
@@ -80,7 +81,7 @@ private fun MovieDetailsBody(
 
             Text(
                 text = movie.title,
-                style = MaterialTheme.typography.h5.copy(color = Color.White),
+                style = MaterialTheme.typography.h5.copy(color = colorResource(R.color.white)),
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 1,
                 modifier = Modifier
@@ -99,7 +100,7 @@ private fun MovieDetailsBody(
             ) {
                 Icon(
                     imageVector = Icons.Filled.Favorite,
-                    tint = Color.Red,
+                    tint = colorResource(R.color.red),
                     contentDescription = null,
                     modifier = Modifier
                         .padding(end = 8.dp)
@@ -107,13 +108,13 @@ private fun MovieDetailsBody(
 
                 Text(
                     text = movie.popularity.toString(),
-                    style = MaterialTheme.typography.body2.copy(color = Color.White),
+                    style = MaterialTheme.typography.body2.copy(color = colorResource(R.color.white)),
                     modifier = Modifier.padding(end = 16.dp, top = 4.dp)
                 )
 
                 Icon(
                     imageVector = Icons.Filled.StarRate,
-                    tint = Color.Yellow,
+                    tint = colorResource(R.color.yellow),
                     contentDescription = null,
                     modifier = Modifier
                         .padding(end = 8.dp)
@@ -121,20 +122,20 @@ private fun MovieDetailsBody(
 
                 Text(
                     text = movie.vote_average.toString(),
-                    style = MaterialTheme.typography.body2.copy(color = Color.White),
+                    style = MaterialTheme.typography.body2.copy(color = colorResource(R.color.white)),
                     modifier = Modifier.padding(end = 32.dp, top = 4.dp)
                 )
 
                 Text(
                     text = "(${movie.release_date})",
-                    style = MaterialTheme.typography.body2.copy(color = Color.White),
+                    style = MaterialTheme.typography.body2.copy(color = colorResource(R.color.white)),
                     modifier = Modifier.padding(top = 4.dp)
                 )
             }
 
             Text(
                 text = movie.overview,
-                style = MaterialTheme.typography.body2.copy(color = Color.White),
+                style = MaterialTheme.typography.body2.copy(color = colorResource(R.color.white)),
                 modifier = Modifier
                     .constrainAs(content) {
                         top.linkTo(rateRow.bottom)
@@ -155,7 +156,7 @@ private fun MovieDetailsBody(
 
                     Icon(
                         imageVector = Icons.Filled.ArrowBack,
-                        tint = Color.White,
+                        tint = colorResource(R.color.white),
                         contentDescription = null,
                         modifier = Modifier
                             .constrainAs(arrow) {
@@ -167,7 +168,7 @@ private fun MovieDetailsBody(
 
                     Text(
                         text = movie.title,
-                        style = MaterialTheme.typography.body2.copy(color = Color.White),
+                        style = MaterialTheme.typography.body2.copy(color = colorResource(R.color.white)),
                         overflow = TextOverflow.Ellipsis,
                         maxLines = 1,
                         modifier = Modifier

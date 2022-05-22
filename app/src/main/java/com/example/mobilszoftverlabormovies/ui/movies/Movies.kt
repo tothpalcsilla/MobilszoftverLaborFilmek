@@ -1,19 +1,18 @@
 package com.example.mobilszoftverlabormovies.ui.movies
 
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.primarySurface
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.annotation.StringRes
+import androidx.compose.animation.Crossfade
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -21,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.example.mobilszoftverlabormovies.Config
 import com.example.mobilszoftverlabormovies.model.Movie
 import com.example.mobilszoftverlabormovies.ui.list.ListViewModel
 import com.example.mobilszoftverlabormovies.R
@@ -28,24 +28,28 @@ import com.example.mobilszoftverlabormovies.R
 @Composable
 fun Movies(
     viewModel: ListViewModel,
-    selectMovie: (Long) -> Unit
+    selectMovie: (Long) -> Unit,
+    selectMenu: (Int) -> Unit,
 ) {
     val movies: List<Movie> by viewModel.movieList.collectAsState(initial = listOf())
     val isLoading: Boolean by viewModel.isLoading
+    val selectedMenu: Int by viewModel.selectedMenu
 
     ConstraintLayout {
         val (body, progress) = createRefs()
         Scaffold(
             backgroundColor = colorResource(R.color.white),
-            topBar = { MovieAppBar() },
+            topBar = {
+                MovieAppBar(selectedMenu, fun(i: Int) { viewModel.selectMenu(i) }, selectMenu)
+            },
             modifier = Modifier.constrainAs(body) {
                 top.linkTo(parent.top)
             },
-        ){ innerPadding ->
+        ) { innerPadding ->
             val modifier = Modifier.padding(innerPadding)
             HomeMovies(modifier, movies, selectMovie)
         }
-        if(isLoading) CircularProgressIndicator(
+        if (isLoading) CircularProgressIndicator(
             modifier = Modifier
                 .constrainAs(progress) {
                     top.linkTo(parent.top)
@@ -53,14 +57,17 @@ fun Movies(
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 },
-            color = Color.White
+            color = colorResource(R.color.bluegray_900)
         )
     }
 }
 
-@Preview
 @Composable
-private fun MovieAppBar() {
+private fun MovieAppBar(
+    selectedMenuIndex: Int,
+    selectMenuItem: (Int) -> Unit,
+    selectMenu: (Int) -> Unit
+) {
     TopAppBar(
         elevation = 6.dp,
         backgroundColor = colorResource(R.color.bluegray_900),
@@ -71,9 +78,89 @@ private fun MovieAppBar() {
                 .padding(8.dp)
                 .align(Alignment.CenterVertically),
             text = stringResource(R.string.app_name),
-            color = Color.White,
+            color = colorResource(R.color.white),
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )
+
+        MyDropDown(selectedMenuIndex, selectMenuItem, selectMenu)
+    }
+}
+
+@Composable
+private fun MyDropDown(
+    selectedMenuIndex: Int,
+    selectMenuItem: (Int) -> Unit,
+    selectMenu: (Int) -> Unit
+) {
+    var expanded by remember { mutableStateOf(false) }
+    val items = listOf("Filmek", "Legjobb értékelés", "Népszerű", "Most játszott")
+    var selectedIndex by remember { mutableStateOf(selectedMenuIndex) }
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .wrapContentSize(Alignment.CenterEnd)
+    ) {
+        Icon(
+            imageVector = Icons.Filled.Menu,
+            tint = colorResource(R.color.white),
+            contentDescription = null,
+            modifier = Modifier
+                .padding(end = 8.dp)
+                .clickable(onClick = { expanded = true })
+        )
+        DropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false },
+            modifier = Modifier
+                .background(
+                    colorResource(R.color.bluegray_900)
+                )
+        ) {
+            items.forEachIndexed { index, s ->
+                DropdownMenuItem(onClick = {
+                    selectedIndex = index
+                    Config.menuIndex = selectedIndex
+                    expanded = false
+                    selectMenuItem(selectedIndex)
+                    selectMenu(selectedIndex)
+                }) {
+                    val fontWeight = if (selectedIndex == index) {
+                        FontWeight.Bold
+                    } else {
+                        FontWeight.Normal
+                    }
+                    Text(
+                        text = s,
+                        style = MaterialTheme.typography.body2.copy(
+                            color = colorResource(R.color.white),
+                            fontWeight = fontWeight
+                        )
+                    )
+                }
+            }
+        }
+    }
+}
+
+
+enum class HomeTab(
+    @StringRes val title: Int,
+) {
+    HOME(R.string.menu_home),
+    TOP_RATED(R.string.menu_top_rated),
+    POPULAR(R.string.menu_popular),
+    NOW_PLAYING(R.string.menu_now_playing);
+
+    companion object {
+        fun getTabFromResource(@StringRes resource: Int): HomeTab {
+            return when (resource) {
+                R.string.menu_home -> HOME
+                R.string.menu_top_rated -> TOP_RATED
+                R.string.menu_popular -> POPULAR
+                R.string.menu_now_playing -> NOW_PLAYING
+                else -> HOME
+            }
+        }
     }
 }

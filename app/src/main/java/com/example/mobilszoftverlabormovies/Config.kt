@@ -8,6 +8,8 @@ class Config {
         const val LANGUAGE = "hu-HU"
         const val limit = 10
 
+        var menuIndex: Int = 0
+
         var isOnline: Boolean = false
     }
 }

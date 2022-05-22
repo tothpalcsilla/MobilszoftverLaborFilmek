@@ -16,6 +16,7 @@ import com.example.mobilszoftverlabormovies.ui.details.MovieDetails
 import com.example.mobilszoftverlabormovies.ui.movies.Movies
 import com.google.accompanist.insets.ProvideWindowInsets
 import dagger.hilt.android.AndroidEntryPoint
+
 //import androidx.hilt.navigation.compose.hiltViewModel
 
 @AndroidEntryPoint
@@ -41,6 +42,58 @@ fun MoviesMainScreen() {
             composable(NavScreen.Home.route) {
                 Movies(
                     viewModel = hiltViewModel(),
+                    selectMenu = {
+                        when(it){
+                            1 -> navController.navigate(NavScreen.TopRated.route)
+                            2 -> navController.navigate(NavScreen.Popular.route)
+                            3 -> navController.navigate(NavScreen.NowPlaying.route)
+                        }
+                    },
+                    selectMovie = {
+                        navController.navigate("${NavScreen.MovieDetails.route}/$it")
+                    }
+                )
+            }
+            composable(NavScreen.TopRated.route) {
+                Movies(
+                    viewModel = hiltViewModel(),
+                    selectMenu = {
+                        when(it){
+                            0 -> navController.navigate(NavScreen.Home.route)
+                            2 -> navController.navigate(NavScreen.Popular.route)
+                            3 -> navController.navigate(NavScreen.NowPlaying.route)
+                        }
+                    },
+                    selectMovie = {
+                        navController.navigate("${NavScreen.MovieDetails.route}/$it")
+                    }
+                )
+            }
+            composable(NavScreen.Popular.route) {
+                Movies(
+                    viewModel = hiltViewModel(),
+                    selectMenu = {
+                        when(it){
+                            0 -> navController.navigate(NavScreen.Home.route)
+                            1 -> navController.navigate(NavScreen.TopRated.route)
+                            3 -> navController.navigate(NavScreen.NowPlaying.route)
+                        }
+                    },
+                    selectMovie = {
+                        navController.navigate("${NavScreen.MovieDetails.route}/$it")
+                    }
+                )
+            }
+            composable(NavScreen.NowPlaying.route) {
+                Movies(
+                    viewModel = hiltViewModel(),
+                    selectMenu = {
+                        when(it){
+                            0 -> navController.navigate(NavScreen.Home.route)
+                            1 -> navController.navigate(NavScreen.TopRated.route)
+                            2 -> navController.navigate(NavScreen.Popular.route)
+                        }
+                    },
                     selectMovie = {
                         navController.navigate("${NavScreen.MovieDetails.route}/$it")
                     }
@@ -53,7 +106,8 @@ fun MoviesMainScreen() {
                 )
             ) { backStackEntry ->
                 val movieId =
-                    backStackEntry.arguments?.getLong(NavScreen.MovieDetails.argument0) ?: return@composable
+                    backStackEntry.arguments?.getLong(NavScreen.MovieDetails.argument0)
+                        ?: return@composable
 
                 MovieDetails(movieId = movieId, viewModel = hiltViewModel()) {
                     navController.navigateUp()
@@ -66,6 +120,9 @@ fun MoviesMainScreen() {
 sealed class NavScreen(val route: String) {
 
     object Home : NavScreen("Home")
+    object TopRated : NavScreen("Top Rated")
+    object Popular : NavScreen("Popular")
+    object NowPlaying : NavScreen("Now Playing")
 
     object MovieDetails : NavScreen("MovieDetails") {
 

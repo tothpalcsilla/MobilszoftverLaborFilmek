@@ -68,8 +68,8 @@ private fun HomeMovie(
                 onClick = { selectMovie(movie.id) }
             ),
         color = colorResource(R.color.bluegray_800),
-        elevation = 8.dp,
-        shape = RoundedCornerShape(8.dp),
+        elevation = 4.dp,
+        shape = RoundedCornerShape(16.dp),
     ) {
         ConstraintLayout {
             val (image, title, rateRow, overview) = createRefs()
@@ -94,7 +94,7 @@ private fun HomeMovie(
 
             Text(
                 text = movie.title,
-                style = MaterialTheme.typography.h6.copy(color = Color.White),
+                style = MaterialTheme.typography.h6.copy(color = colorResource(R.color.white)),
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 1,
                 textAlign = TextAlign.Start,
@@ -116,7 +116,7 @@ private fun HomeMovie(
             ) {
                 Icon(
                     imageVector = Icons.Filled.Favorite,
-                    tint = Color.Red,
+                    tint = colorResource(R.color.red),
                     contentDescription = null,
                     modifier = Modifier
                         .padding(end = 8.dp)
@@ -124,13 +124,13 @@ private fun HomeMovie(
 
                 Text(
                     text = movie.popularity.toString(),
-                    style = MaterialTheme.typography.body2.copy(color = Color.White),
+                    style = MaterialTheme.typography.body2.copy(color = colorResource(R.color.white)),
                     modifier = Modifier.padding(end = 16.dp, top = 4.dp)
                 )
 
                 Icon(
                     imageVector = Icons.Filled.StarRate,
-                    tint = Color.Yellow,
+                    tint = colorResource(R.color.yellow),
                     contentDescription = null,
                     modifier = Modifier
                         .padding(end = 8.dp)
@@ -138,14 +138,14 @@ private fun HomeMovie(
 
                 Text(
                     text = movie.vote_average.toString(),
-                    style = MaterialTheme.typography.body2.copy(color = Color.White),
+                    style = MaterialTheme.typography.body2.copy(color = colorResource(R.color.white)),
                     modifier = Modifier.padding(end = 32.dp, top = 4.dp)
                 )
             }
 
             Text(
                 text = movie.overview,
-                style = MaterialTheme.typography.body2.copy(color = Color.White),
+                style = MaterialTheme.typography.body2.copy(color = colorResource(R.color.white)),
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 2,
                 textAlign = TextAlign.Start,

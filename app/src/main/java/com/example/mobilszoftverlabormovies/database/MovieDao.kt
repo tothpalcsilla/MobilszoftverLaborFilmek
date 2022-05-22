@@ -12,23 +12,23 @@ interface MovieDao {
     @Query("SELECT * FROM Movie")
     fun getAllMovies(): List<Movie>
     // Top rated
-    @Query("SELECT * FROM Movie ORDER BY vote_average")
-    fun getLatestMovies(): List<Movie>
+    @Query("SELECT * FROM Movie ORDER BY vote_average DESC")
+    fun getTopRatedMovies(): List<Movie>
     // Népszerűek
-    @Query("SELECT * FROM Movie ORDER BY popularity")
+    @Query("SELECT * FROM Movie ORDER BY popularity DESC")
     fun getPopularMovies(): List<Movie>
     // Most játszottak
-    @Query("SELECT * FROM Movie ORDER BY release_date")
+    @Query("SELECT * FROM Movie ORDER BY release_date DESC")
     fun getNowPlayingMovies(): List<Movie>
 
     @Query("SELECT * FROM Movie WHERE id = :movie_id")
     fun getMovie(movie_id: Long): Movie
 
     // CREATE
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMovie(movie: Movie): Long
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMoviesList(movies: List<Movie>): List<Long>
 
     // POST

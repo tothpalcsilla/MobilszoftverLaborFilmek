@@ -12,16 +12,6 @@ interface MoviesApi {
 
     // Filmek listája
     @GET("/3/search/movie")
-    fun getMovies(
-        @Query("api_key") api_key: String,
-        @Query("query") query: String,
-        @Query("language") language: String,
-        @Query("page") page: Int,
-        @Query("include_adult") include_adult: Boolean
-    ): Call<MovieListApiResponseModel>
-
-    // Filmek listája
-    @GET("/3/search/movie")
     fun getAllMovies(
         @Query("api_key") api_key: String,
         @Query("query") query: String,
@@ -42,12 +32,12 @@ interface MoviesApi {
 
     // Top rated
     @GET("/3/movie/top_rated")
-    fun getLatestMovies(
+    fun getTopRatedMovies(
         @Query("api_key") api_key: String,
         @Query("language") language: String,
         @Query("page") page: Int,
         //@Query("region") region: String
-    ): List<Movie>
+    ): Call<MovieListApiResponseModel>
 
     // Népszerűek
     @GET("/3/movie/popular")
@@ -56,7 +46,7 @@ interface MoviesApi {
         @Query("language") language: String,
         @Query("page") page: Int,
         //@Query("region") region: String
-    ): List<Movie>
+    ): Call<MovieListApiResponseModel>
 
     // Most játszottak
     @GET("/3/movie/now_playing")
@@ -65,7 +55,7 @@ interface MoviesApi {
         @Query("language") language: String,
         @Query("page") page: Int,
         //@Query("region") region: String
-    ): List<Movie>
+    ): Call<MovieListApiResponseModel>
 
     // POST
     fun insertMovie(movie: Movie): Long

@@ -1,5 +1,6 @@
 package com.example.mobilszoftverlabormovies.model
 
+import androidx.compose.runtime.Immutable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

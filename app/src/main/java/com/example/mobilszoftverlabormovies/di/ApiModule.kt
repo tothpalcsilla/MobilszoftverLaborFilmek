@@ -3,7 +3,6 @@ package com.example.mobilszoftverlabormovies.di
 import android.content.Context
 import com.example.mobilszoftverlabormovies.Config
 import com.example.mobilszoftverlabormovies.network.MoviesApi
-import com.example.mobilszoftverlabormovies.network.ApiKeyInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,7 +24,7 @@ object NetworkModule {
     fun provideOkHttpClient(@ApplicationContext context: Context): OkHttpClient {
         return OkHttpClient.Builder()
             .dns(Dns.SYSTEM)
-            .addInterceptor(ApiKeyInterceptor())
+            //.addInterceptor(ApiKeyInterceptor())
             .connectTimeout(15, TimeUnit.SECONDS) // connect timeout
             .readTimeout(15, TimeUnit.SECONDS)
             .build()
