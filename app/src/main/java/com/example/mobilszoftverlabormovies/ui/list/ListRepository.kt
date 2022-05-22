@@ -30,81 +30,43 @@ class ListRepository @Inject constructor(
         onCompletion: () -> Unit,
         onError: (String) -> Unit
     ) = flow {
-        val movies: List<Movie> = movieDao.getAllMovies()
-        if (movies.isEmpty()) {
-            // request API network call asynchronously.
+        movieList = movieDao.getAllMovies()
+        if (movieList.isEmpty() && isOnline) {
             val response = movieApi.getMovies(
                 api_key = Config.API_KEY,
                 language = Config.LANGUAGE,
                 include_adult = false,
                 page = 1,
-                query = "2022")
-            /*if(response.isSuccessful){
-                val responseData = response.body()
-                val movieListResult: List<Movie>? = responseData?.results
-                if(movieListResult != null){
-                    insertMoviesListToDb(movieListResult)
-                    movieList = movieListResult
-                    emit(movieList)
-                } else {
-                    movieList = Collections.emptyList()
-                }
-            }*/
+                query = "barbie"
+            )
             response.enqueue(object : Callback<MovieListApiResponseModel> {
                 override fun onFailure(call: Call<MovieListApiResponseModel>, t: Throwable) {
                     movieList = Collections.emptyList()
                 }
 
-                override fun onResponse(call: Call<MovieListApiResponseModel>, response: Response<MovieListApiResponseModel>) {
+                override fun onResponse(
+                    call: Call<MovieListApiResponseModel>,
+                    response: Response<MovieListApiResponseModel>
+                ) {
                     val responseData = response.body()
                     val movieListResult: List<Movie>? = responseData?.results
-                    if(movieListResult != null){
+                    movieList = if (movieListResult != null) {
                         insertMoviesListToDb(movieListResult)
-                        movieList = movieListResult
+                        movieListResult
                     } else {
-                        movieList = Collections.emptyList()
+                        Collections.emptyList()
                     }
                 }
             })
-            emit(movieList)
-        } else {
-            emit(movies)
         }
-    }.onStart { onStart() }.onCompletion { onCompletion() }.flowOn(Dispatchers.IO)
-
-    /*fun getAllMovies() {
-        if (isOnline) {
-            val movieCall: Call<MovieListApiResponseModel> = movieApi.getAllMovies(
-                language = Config.LANGUAGE,
-                include_adult = false,
-                page = 1,
-                query = "2022"
-            )
-
-            movieCall.enqueue(object : Callback<MovieListApiResponseModel> {
-                override fun onFailure(call: Call<MovieListApiResponseModel>, t: Throwable) {
-                    //TODO set a textField.text = t.message
-                }
-
-                override fun onResponse(call: Call<MovieListApiResponseModel>, response: Response<MovieListApiResponseModel>) {
-                    val responseData = response.body()
-                    val movieListResult: List<Movie>? = responseData?.results
-                    if(movieListResult != null){
-                        insertMoviesListToDb(movieListResult)
-                        movieList = movieListResult
-                    } else {
-                        movieList = Collections.emptyList()
-                    }
-                }
-            })
-        } else {
-            movieList = movieDao.getAllMovies()
-        }
-    }*/
+        emit(movieList)
+    }.onStart { onStart() }.onCompletion {
+        onCompletion()
+    }.flowOn(Dispatchers.IO)
 
     fun getLatestMovies(): List<Movie> {
         val movieList: List<Movie> = if (isOnline) {
-            movieApi.getLatestMovies(language = Config.LANGUAGE, page = 1)
+            movieApi.getLatestMovies(api_key = Config.API_KEY, language = Config.LANGUAGE, page = 1)
         } else {
             movieDao.getLatestMovies()
         }
@@ -114,7 +76,7 @@ class ListRepository @Inject constructor(
 
     fun getPopularMovies(): List<Movie> {
         val movieList: List<Movie> = if (isOnline) {
-            movieApi.getPopularMovies(language = Config.LANGUAGE, page = 1)
+            movieApi.getPopularMovies(api_key = Config.API_KEY, language = Config.LANGUAGE, page = 1)
         } else {
             movieDao.getPopularMovies()
         }
@@ -124,7 +86,7 @@ class ListRepository @Inject constructor(
 
     fun getNowPlayingMovies(): List<Movie> {
         val movieList: List<Movie> = if (isOnline) {
-            movieApi.getNowPlayingMovies(language = Config.LANGUAGE, page = 1)
+            movieApi.getNowPlayingMovies(api_key = Config.API_KEY, language = Config.LANGUAGE, page = 1)
         } else {
             movieDao.getNowPlayingMovies()
         }

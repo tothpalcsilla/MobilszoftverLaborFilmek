@@ -23,6 +23,7 @@ interface MoviesApi {
     // Filmek listája
     @GET("/3/search/movie")
     fun getAllMovies(
+        @Query("api_key") api_key: String,
         @Query("query") query: String,
         @Query("language") language: String,
         @Query("page") page: Int,
@@ -30,33 +31,37 @@ interface MoviesApi {
     ): Call<MovieListApiResponseModel>
 
     // Film részletei
-    @GET("/movie/{movie_id}")
+    @GET("/3/movie/{movie_id}")
     fun getMovie(
+        @Query("api_key") api_key: String,
         @Query("movie_id") movie_id: Long,
         //@Query("query") query: String,
         @Query("language") language: String,
         //@Query("append_to_response") append_to_response: String
-    ): Movie
+    ): Call<Movie>
 
     // Top rated
-    @GET("/movie/top_rated")
+    @GET("/3/movie/top_rated")
     fun getLatestMovies(
+        @Query("api_key") api_key: String,
         @Query("language") language: String,
         @Query("page") page: Int,
         //@Query("region") region: String
     ): List<Movie>
 
     // Népszerűek
-    @GET("movie/popular")
+    @GET("/3/movie/popular")
     fun getPopularMovies(
+        @Query("api_key") api_key: String,
         @Query("language") language: String,
         @Query("page") page: Int,
         //@Query("region") region: String
     ): List<Movie>
 
     // Most játszottak
-    @GET("/movie/now_playing")
+    @GET("/3/movie/now_playing")
     fun getNowPlayingMovies(
+        @Query("api_key") api_key: String,
         @Query("language") language: String,
         @Query("page") page: Int,
         //@Query("region") region: String

@@ -14,6 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,7 +36,7 @@ fun Movies(
     ConstraintLayout {
         val (body, progress) = createRefs()
         Scaffold(
-            backgroundColor = MaterialTheme.colors.primarySurface,
+            backgroundColor = colorResource(R.color.white),
             topBar = { MovieAppBar() },
             modifier = Modifier.constrainAs(body) {
                 top.linkTo(parent.top)
@@ -62,7 +63,7 @@ fun Movies(
 private fun MovieAppBar() {
     TopAppBar(
         elevation = 6.dp,
-        backgroundColor = Color.Black,
+        backgroundColor = colorResource(R.color.bluegray_900),
         modifier = Modifier.height(58.dp)
     ) {
         Text(

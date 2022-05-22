@@ -17,13 +17,7 @@ class DetailRepository @Inject constructor(
     private var isOnline: Boolean = Config.isOnline
 
     fun getMovie(movie_id: Long) = flow {
-        val movie = if (isOnline) {
-            movieApi.getMovie(movie_id= movie_id, language = Config.LANGUAGE)
-        } else {
-            movieDao.getMovie(movie_id)
-        }
-        insertMovieToDb(movie)
-        emit(movie)
+        emit(movieDao.getMovie(movie_id))
     }.flowOn(Dispatchers.IO)
 
     // CREATE

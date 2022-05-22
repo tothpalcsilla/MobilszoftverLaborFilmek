@@ -2,22 +2,35 @@ package com.example.mobilszoftverlabormovies.ui.movies
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.StarRate
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
+import com.example.mobilszoftverlabormovies.Config
+import com.example.mobilszoftverlabormovies.R
 import com.example.mobilszoftverlabormovies.model.Movie
 import com.google.accompanist.insets.statusBarsPadding
 
@@ -31,7 +44,6 @@ fun HomeMovies(
         modifier = modifier
             .statusBarsPadding()
             .verticalScroll(rememberScrollState())
-            .background(MaterialTheme.colors.background)
     ) {
         movies.forEach { movie ->
             HomeMovie(
@@ -50,41 +62,101 @@ private fun HomeMovie(
 ) {
     Surface(
         modifier = modifier
-            .padding(4.dp)
+            .fillMaxWidth()
+            .padding(8.dp)
             .clickable(
                 onClick = { selectMovie(movie.id) }
             ),
-        color = MaterialTheme.colors.onBackground,
+        color = colorResource(R.color.bluegray_800),
         elevation = 8.dp,
-        shape = RoundedCornerShape(8.dp)
+        shape = RoundedCornerShape(8.dp),
     ) {
         ConstraintLayout {
-            val (image, title, content) = createRefs()
-            /*NetworkImage(
-                modifier = Modifier
-                    .aspectRatio(0.8f)
-                    .constrainAs(image) {
-                        centerHorizontallyTo(parent)
-                        top.linkTo(parent.top)
-                    },
-                url = movie.,
-            )*/
+            val (image, title, rateRow, overview) = createRefs()
 
-            Text(
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(Config.base_url + movie.poster_path)
+                    .crossfade(true)
+                    .build(),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .constrainAs(title) {
-                        centerHorizontallyTo(parent)
-                        top.linkTo(image.bottom)
+                    .constrainAs(image) {
+                        start.linkTo(parent.start)
+                        centerVerticallyTo(parent)
                     }
-                    .padding(8.dp),
-                text = movie.title,
-                style = MaterialTheme.typography.h2,
-                textAlign = TextAlign.Center,
+                    .height(130.dp)
+                    .padding(8.dp)
+                    .aspectRatio(1.0f)
+                    .clip(CircleShape)
             )
 
             Text(
-                text = movie.release_date,
-                style = MaterialTheme.typography.body1,
+                text = movie.title,
+                style = MaterialTheme.typography.h6.copy(color = Color.White),
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 1,
+                textAlign = TextAlign.Start,
+                modifier = Modifier
+                    .constrainAs(title) {
+                        start.linkTo(image.end)
+                    }
+                    .width(200.dp)
+                    .padding(top = 12.dp)
+            )
+
+            Row(
+                modifier = Modifier
+                    .constrainAs(rateRow) {
+                        top.linkTo(title.bottom)
+                        start.linkTo(image.end)
+                    }
+                    .padding(horizontal = 16.dp, vertical = 12.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Favorite,
+                    tint = Color.Red,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .padding(end = 8.dp)
+                )
+
+                Text(
+                    text = movie.popularity.toString(),
+                    style = MaterialTheme.typography.body2.copy(color = Color.White),
+                    modifier = Modifier.padding(end = 16.dp, top = 4.dp)
+                )
+
+                Icon(
+                    imageVector = Icons.Filled.StarRate,
+                    tint = Color.Yellow,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .padding(end = 8.dp)
+                )
+
+                Text(
+                    text = movie.vote_average.toString(),
+                    style = MaterialTheme.typography.body2.copy(color = Color.White),
+                    modifier = Modifier.padding(end = 32.dp, top = 4.dp)
+                )
+            }
+
+            Text(
+                text = movie.overview,
+                style = MaterialTheme.typography.body2.copy(color = Color.White),
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 2,
+                textAlign = TextAlign.Start,
+                modifier = Modifier
+                    .constrainAs(overview) {
+                        top.linkTo(rateRow.bottom)
+                        start.linkTo(image.end)
+                        bottom.linkTo(parent.bottom)
+                    }
+                    .width(200.dp)
+                    .padding(bottom = 12.dp)
             )
         }
     }
