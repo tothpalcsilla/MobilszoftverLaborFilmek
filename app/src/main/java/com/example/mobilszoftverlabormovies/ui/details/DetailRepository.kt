@@ -1,5 +1,7 @@
 package com.example.mobilszoftverlabormovies.ui.list
 
+import android.net.NetworkCapabilities
+import android.os.Build
 import com.example.mobilszoftverlabormovies.Config
 import com.example.mobilszoftverlabormovies.database.MovieDao
 import com.example.mobilszoftverlabormovies.model.Movie
@@ -14,7 +16,24 @@ class DetailRepository @Inject constructor(
     private val movieDao: MovieDao
 ) {
 
-    private var isOnline: Boolean = Config.isOnline
+    fun isOnline(): Boolean {
+        val connectivityManager = Config.connectivityManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val network = connectivityManager.activeNetwork ?: return false
+            val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+            return when {
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                else -> false
+            }
+        } else {
+            @Suppress("DEPRECATION")
+            val networkInfo = connectivityManager.activeNetworkInfo ?: return false
+
+            @Suppress("DEPRECATION")
+            return networkInfo.isConnectedOrConnecting
+        }
+    }
 
     fun getMovie(movie_id: Long) = flow {
         emit(movieDao.getMovie(movie_id))
@@ -22,7 +41,7 @@ class DetailRepository @Inject constructor(
 
     // CREATE
     fun insertMovie(movie: Movie): Long {
-        if (isOnline) {
+        if (isOnline()) {
             movieApi.insertMovie(movie)
         }
         return insertMovieToDb(movie)
@@ -34,7 +53,7 @@ class DetailRepository @Inject constructor(
 
     // POST
     fun updateMovie(movie: Movie) {
-        if (isOnline) {
+        if (isOnline()) {
             movieApi.updateMovie(movie)
         }
         return movieDao.updateMovie(movie)
@@ -42,7 +61,7 @@ class DetailRepository @Inject constructor(
 
     // DELETE
     fun deleteMovie(movie: Movie) {
-        if (isOnline) {
+        if (isOnline()) {
             movieApi.deleteMovie(movie)
         }
         return movieDao.deleteMovie(movie)

@@ -1,5 +1,9 @@
 package com.example.mobilszoftverlabormovies.ui.list
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import androidx.annotation.WorkerThread
 import androidx.compose.runtime.State
 import com.example.mobilszoftverlabormovies.Config
@@ -20,11 +24,29 @@ class ListRepository @Inject constructor(
     private val movieApi: MoviesApi,
     private val movieDao: MovieDao
 ) {
-    private var isOnline: Boolean = Config.isOnline
+    fun isOnline(): Boolean {
+        val connectivityManager = Config.connectivityManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val network = connectivityManager.activeNetwork ?: return false
+            val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+            return when {
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                else -> false
+            }
+        } else {
+            @Suppress("DEPRECATION")
+            val networkInfo = connectivityManager.activeNetworkInfo ?: return false
+
+            @Suppress("DEPRECATION")
+            return networkInfo.isConnectedOrConnecting
+        }
+    }
+
     var movieList: List<Movie> = Collections.emptyList()
 
     fun getMovies(index: Int) {
-        if (isOnline) {
+        if (isOnline()) {
             val response = when (index) {
                 0 -> movieApi.getAllMovies(
                     api_key = Config.API_KEY,
@@ -65,7 +87,7 @@ class ListRepository @Inject constructor(
                 movieList = Collections.emptyList()
             }
         }
-        if (!Config.isOnline || movieList.isEmpty()) {
+        if (!isOnline() || movieList.isEmpty()) {
             movieList = when (index) {
                 0 -> movieDao.getAllMovies()
                 1 -> movieDao.getTopRatedMovies()

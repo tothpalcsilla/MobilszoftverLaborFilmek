@@ -1,5 +1,7 @@
 package com.example.mobilszoftverlabormovies
 
+import android.net.ConnectivityManager
+
 class Config {
     companion object {
         const val base_url = "https://image.tmdb.org/t/p/w500/"
@@ -11,5 +13,8 @@ class Config {
         var menuIndex: Int = 0
 
         var isOnline: Boolean = false
+        lateinit var connectivityManager: ConnectivityManager
     }
+
+
 }

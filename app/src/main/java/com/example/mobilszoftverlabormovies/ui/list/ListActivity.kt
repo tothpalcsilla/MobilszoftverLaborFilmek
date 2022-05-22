@@ -1,5 +1,9 @@
 package com.example.mobilszoftverlabormovies.ui.list
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,6 +16,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.mobilszoftverlabormovies.Config
 import com.example.mobilszoftverlabormovies.ui.details.MovieDetails
 import com.example.mobilszoftverlabormovies.ui.movies.Movies
 import com.google.accompanist.insets.ProvideWindowInsets
@@ -27,6 +32,7 @@ class ListActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Config.connectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         setContent {
             MoviesMainScreen()
         }
