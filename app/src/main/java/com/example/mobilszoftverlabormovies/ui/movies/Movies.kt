@@ -1,7 +1,5 @@
 package com.example.mobilszoftverlabormovies.ui.movies
 
-import androidx.annotation.StringRes
-import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -11,12 +9,9 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
@@ -94,7 +89,12 @@ private fun MyDropDown(
     selectMenu: (Int) -> Unit
 ) {
     var expanded by remember { mutableStateOf(false) }
-    val items = listOf("Filmek", "Legjobb értékelés", "Népszerű", "Most játszott")
+    val items: List<String> = listOf(
+        stringResource(R.string.menu_home),
+        stringResource(R.string.menu_top_rated),
+        stringResource(R.string.menu_popular),
+        stringResource(R.string.menu_now_playing)
+    )
     var selectedIndex by remember { mutableStateOf(selectedMenuIndex) }
     Box(
         modifier = Modifier
@@ -138,28 +138,6 @@ private fun MyDropDown(
                         )
                     )
                 }
-            }
-        }
-    }
-}
-
-
-enum class HomeTab(
-    @StringRes val title: Int,
-) {
-    HOME(R.string.menu_home),
-    TOP_RATED(R.string.menu_top_rated),
-    POPULAR(R.string.menu_popular),
-    NOW_PLAYING(R.string.menu_now_playing);
-
-    companion object {
-        fun getTabFromResource(@StringRes resource: Int): HomeTab {
-            return when (resource) {
-                R.string.menu_home -> HOME
-                R.string.menu_top_rated -> TOP_RATED
-                R.string.menu_popular -> POPULAR
-                R.string.menu_now_playing -> NOW_PLAYING
-                else -> HOME
             }
         }
     }

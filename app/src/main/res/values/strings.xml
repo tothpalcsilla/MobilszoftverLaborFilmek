@@ -6,5 +6,5 @@
     <string name="menu_home">Filmek</string>
     <string name="menu_top_rated">Legmagasabb értékelés</string>
     <string name="menu_popular">Népszerű</string>
-    <string name="menu_now_playing">MMost játszott</string>
+    <string name="menu_now_playing">Most játszott</string>
 </resources>
