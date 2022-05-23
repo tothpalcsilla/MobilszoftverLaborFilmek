@@ -31,7 +31,6 @@ ListViewModel @Inject constructor(
     var movieList: Flow<List<Movie>> = listRepository.loadMovies(
         _selectedMenu.value,
         onStart = { _isLoading.value = true },
-        onCompletion = { _isLoading.value = false },
-        onError = { println(it) }
+        onCompletion = { _isLoading.value = false }
     )
 }

@@ -1,0 +1,414 @@
+{
+  "dates": {
+    "maximum": "2022-05-27",
+    "minimum": "2022-04-09"
+  },
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/A3bsT0m1um6tvcmlIGxBwx9eAxn.jpg",
+      "genre_ids": [
+        28,
+        12,
+        35,
+        10749
+      ],
+      "id": 752623,
+      "original_language": "en",
+      "original_title": "The Lost City",
+      "overview": "Loretta Sage mindig egzotikus helyekről írt a népszerű kalandregényeiben, melyek címlapján a Dash nevű hőst megjelenítő, jóképű borítómodell, Alan feszít, aki erre a karakterre tette fel az életét. Miközben Loretta az új könyvét népszerűsíti, elrabolja őt egy különc milliárdos, aki azt reméli, hogy elvezeti őt a könyvében található elveszett város kincséhez. Alan bizonyítani szeretné, hogy a valóságban is hős tud lenni, nem csak a könyvekben, így nekivág, hogy megmentse a nőt. A furcsa párnak össze kell dolgoznia, hogy megtalálják az ősi kincset, mielőtt örökre elveszne...",
+      "popularity": 10211.875,
+      "poster_path": "/2Zz6L6rYuXApccdlrJEWiQa5YwO.jpg",
+      "release_date": "2022-03-24",
+      "title": "Az elveszett város",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 683
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/rl49Qr4KbfTSYjXYAN8fMDIt2xS.jpg",
+      "genre_ids": [
+        28,
+        878,
+        14
+      ],
+      "id": 526896,
+      "original_language": "en",
+      "original_title": "Morbius",
+      "overview": "Dr. Michael Morbius, aki egy ritka vérbetegségben szenved, és eltökélt szándéka, hogy megmentsen másokat is, akik ugyanerre a sorsra jutnak, kétségbeesett hazárdjátékba kezd. Ami eleinte radikális sikernek tűnik, hamarosan kiderül, hogy a betegségnél is rosszabb gyógymód.",
+      "popularity": 8853.551,
+      "poster_path": "/6JjfSchsU6daXk2AKX8EEBjO3Fm.jpg",
+      "release_date": "2022-03-30",
+      "title": "Morbius",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 995
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/egoyMDLqCxzjnSrWOz50uLlJWmD.jpg",
+      "genre_ids": [
+        28,
+        878,
+        35,
+        10751,
+        12
+      ],
+      "id": 675353,
+      "original_language": "en",
+      "original_title": "Sonic the Hedgehog 2",
+      "overview": "Miután letelepedett Green Hillsben, Sonic minden vágya, hogy bebizonyítsa: megvan benne az, ami ahhoz kell, hogy igazi hős legyen. Nem kell sokat várnia, hogy próbára tegye magát, ugyanis Dr. Robotnyik visszatér, ezúttal új társával, Knucklesszel, és egy smaragdot keresnek, amelynek ereje civilizációkat képes elpusztítani. Sonic összeáll saját segítőjével, Tailsszel, és együtt vágnak neki a világkörüli útnak, hogy megtalálják a smaragdot, mielőtt rossz kezekbe kerülne...",
+      "popularity": 7843.215,
+      "poster_path": "/imvQliNlY6CG3Hp2cXpIinWLEFV.jpg",
+      "release_date": "2022-03-30",
+      "title": "Sonic, a sündisznó 2",
+      "video": false,
+      "vote_average": 7.8,
+      "vote_count": 1536
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cqnVuxXe6vA7wfNWubak3x36DKJ.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14,
+        53
+      ],
+      "id": 639933,
+      "original_language": "en",
+      "original_title": "The Northman",
+      "overview": "Az erőteljes vízióiról ismert rendező, Robert Eggers új filmje egy akciókban bővelkedő eposz. Egy fiatal viking herceg sorsát követi nyomon, aki bosszút akar állni az apja haláláért.",
+      "popularity": 6992.273,
+      "poster_path": "/5i7s73329ekqT0lXCoPVgtmmJxR.jpg",
+      "release_date": "2022-04-07",
+      "title": "Az Északi",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 1011
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xHrp2pq73oi9D64xigPjWW1wcz1.jpg",
+      "genre_ids": [
+        80,
+        9648,
+        53
+      ],
+      "id": 414906,
+      "original_language": "en",
+      "original_title": "The Batman",
+      "overview": "A bűnözés elleni küzdelem második évében Batman olyan korrupciót tár fel Gotham Cityben, amely a saját családjához kötődik, miközben szembesül a Rébusz néven ismert sorozatgyilkossal.",
+      "popularity": 3497.925,
+      "poster_path": "/oAlu5zs0noqOADpDyDi72FMjiGx.jpg",
+      "release_date": "2022-03-01",
+      "title": "Batman",
+      "video": false,
+      "vote_average": 7.8,
+      "vote_count": 4693
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/AdyJH8kDm8xT8IKTlgpEC15ny4u.jpg",
+      "genre_ids": [
+        14,
+        28,
+        12
+      ],
+      "id": 453395,
+      "original_language": "en",
+      "original_title": "Doctor Strange in the Multiverse of Madness",
+      "overview": "Doctor Strange, régi és új misztikus szövetségesei segítségével bejárja a Multiverzum észbontó és veszélyes alternatív valóságait, hogy szembeszálljon egy titokzatos új ellenféllel.",
+      "popularity": 3368.831,
+      "poster_path": "/zJr1z2yXr53Damndls4jr6gq13k.jpg",
+      "release_date": "2022-05-04",
+      "title": "Doctor Strange az őrület multiverzumában",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 1748
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fEe5fe82qHzjO4yej0o79etqsWV.jpg",
+      "genre_ids": [
+        16,
+        35,
+        28,
+        10751,
+        80
+      ],
+      "id": 629542,
+      "original_language": "en",
+      "original_title": "The Bad Guys",
+      "overview": "Miután egy életen át legendás rablásokat hajtottak végre, öt hírhedt rosszfiú – Mr. Farkas, Mr. Kígyó, Mr. Piranha, Mr. Cápa és Ms. Tarantula – nekiveselkednek az eddigi legnehezebb kihívásnak... megpróbálnak jó útra térni.",
+      "popularity": 3284.364,
+      "poster_path": "/ocFG1cYpiyQ29TezvYYBGp623x0.jpg",
+      "release_date": "2022-03-17",
+      "title": "A rosszfiúk",
+      "video": false,
+      "vote_average": 7.8,
+      "vote_count": 465
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/figlwUsXXFehX3IebdjqNLV6vWk.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "id": 628900,
+      "original_language": "en",
+      "original_title": "The Contractor",
+      "overview": "Miután elbocsájtották a tengerészgyalogságtól, James Harper csatlakozik egy félkatonai szervezethez, hogy zsoldosként továbbra is támogatni tudja családját.",
+      "popularity": 2657.172,
+      "poster_path": "/rJPGPZ5soaG27MK90oKpioSiJE2.jpg",
+      "release_date": "2022-03-10",
+      "title": "The Contractor",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 244
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dW3fQJrshh2wYDoW4HUA7ZabsN1.jpg",
+      "genre_ids": [
+        28,
+        53,
+        80
+      ],
+      "id": 763285,
+      "original_language": "en",
+      "original_title": "Ambulance",
+      "overview": "Will Sharp a kitüntetett veterán, kétségbeesetten keresi a pénzt felesége orvosi számláinak fedezésére, ezért örökbefogadott testvére, Danny segítségét kéri. Danny, a karizmatikus bűnöző, segítségképpen egy balhét ajánl neki: 32 millió dolláros zsákmánnyal kecsegtető bankrablást. Az élet azonban keresztülhúzza Danny számításait.",
+      "popularity": 1920.885,
+      "poster_path": "/fHJnZqnnjMLmLbThBFbMgad6dao.jpg",
+      "release_date": "2022-03-16",
+      "title": "Rohammentő",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 621
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/i0zbSmiyyylh7H3Qb4jgscz46Pm.jpg",
+      "genre_ids": [
+        27
+      ],
+      "id": 893370,
+      "original_language": "es",
+      "original_title": "Virus-32",
+      "overview": "",
+      "popularity": 1802.229,
+      "poster_path": "/3CvBuw9aoziJJAbqymmsF2drnzH.jpg",
+      "release_date": "2022-04-21",
+      "title": "Virus-32",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 50
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qNRkfXBdAuXk9Qs3BEDIfmbAK9w.jpg",
+      "genre_ids": [
+        80,
+        28
+      ],
+      "id": 883502,
+      "original_language": "en",
+      "original_title": "Fortress: Sniper's Eye",
+      "overview": "A történet egy szigorúan titkos üdülőhely körül forog, melyben nyugdíjas amerikai hírszerző tiszteket szállásolnak el.",
+      "popularity": 1676.518,
+      "poster_path": "/61J34xHVVdQHbJ4MSCWQo4e727v.jpg",
+      "release_date": "2022-04-29",
+      "title": "Fortress: Sniper's Eye",
+      "video": false,
+      "vote_average": 5.9,
+      "vote_count": 37
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jIdZmqElYgNwlCsUtCwmN1rDu7I.jpg",
+      "genre_ids": [
+        80,
+        18,
+        53
+      ],
+      "id": 799876,
+      "original_language": "en",
+      "original_title": "The Outfit",
+      "overview": "Leonard egykor London leghíresebb öltönyeit készítette az előkelő Savile Row-n. Egy személyes tragédia után azonban Chicagóba költözött, ahol ügyfélköre az alvilág legsötétebb alakjai közül került ki.",
+      "popularity": 1630.09,
+      "poster_path": "/lZa5EB6PVJBT5mxhgZS5ftqdAm6.jpg",
+      "release_date": "2022-02-25",
+      "title": "The Outfit",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 220
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zGLHX92Gk96O1DJvLil7ObJTbaL.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14
+      ],
+      "id": 338953,
+      "original_language": "en",
+      "original_title": "Fantastic Beasts: The Secrets of Dumbledore",
+      "overview": "Albus Dumbledore egykori tanítványa segítségét kéri, hogy meghiúsítsa Grindelwald varázslóvilág feletti irányítás átvételére irányuló terveit. Göthe beleegyezik, hogy egy varázslókból, boszorkányokból és a bátor mugli pékből álló csapatot, egy veszélyes küldetésre vezesse, ahol régi és új vadállatokkal találkoznak, és összecsapnak Grindelwald követőinek egyre növekvő légiójával.",
+      "popularity": 954.7,
+      "poster_path": "/yvvkal8oHCMv8i1gO5TFlKk8HRg.jpg",
+      "release_date": "2022-04-06",
+      "title": "Legendás állatok: Dumbledore titkai",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 1067
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6mJrgL7Mi13XjJeGYJFlD6UEVQw.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10751,
+        10402
+      ],
+      "id": 438695,
+      "original_language": "en",
+      "original_title": "Sing 2",
+      "overview": "Buster Moon, és az ő állati sztárcsapata az eddigi leglátványosabb szuperműsorukra készülnek… a világ szórakoztatóiparának csillogó fővárosában. Csak egy bökkenő van: először meg kell győzniük a világ legzárkózottabb rocksztárját, hogy csatlakozzon hozzájuk. Buster és csapata sikerre vitte az Újhold Színházat, de Buster nagyobb trófeát szemelt ki magának: új műsorral akar előrukkolni a Kristálytorony Színházban a csillogó-villogó Redshore Cityben.",
+      "popularity": 848.909,
+      "poster_path": "/xDuxYM3dFbHjJlwhmKZcyVlP7KR.jpg",
+      "release_date": "2021-12-01",
+      "title": "Énekelj! 2",
+      "video": false,
+      "vote_average": 8.1,
+      "vote_count": 2745
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tq3klWQevRK0Or0cGhsw0h3FDWQ.jpg",
+      "genre_ids": [
+        12,
+        16,
+        35,
+        10751,
+        14
+      ],
+      "id": 676705,
+      "original_language": "fr",
+      "original_title": "Pil",
+      "overview": "",
+      "popularity": 763.877,
+      "poster_path": "/78JfwRiubwX87BYgPXsdFKBf9P5.jpg",
+      "release_date": "2021-08-11",
+      "title": "Pil",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 85
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tH1afdfqqrYTP3l2oqsHEsNN5ul.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        35
+      ],
+      "id": 678287,
+      "original_language": "en",
+      "original_title": "Marmaduke",
+      "overview": "A rendetlen és pajkos Marmaduke-nak hatalmas szíve van, mégis mindig bajba kerül. De vajon mit sikerül kihoznia magából, amikor benevezik egy flancos kutyakiállításra?",
+      "popularity": 736.484,
+      "poster_path": "/tvhX4QQnMyMjlFeShLCXovvbf0c.jpg",
+      "release_date": "2022-04-28",
+      "title": "Marmaduke",
+      "video": false,
+      "vote_average": 5.2,
+      "vote_count": 11
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ifUfE79O1raUwbaQRIB7XnFz5ZC.jpg",
+      "genre_ids": [
+        27,
+        9648,
+        53
+      ],
+      "id": 646385,
+      "original_language": "en",
+      "original_title": "Scream",
+      "overview": "Huszonöt évvel azután, hogy Woodsboro csendes kisvárosát brutális gyilkosságsorozat rázta meg, egy új gyilkos ölti magára a maszkot, hogy egy csapat tinédzsert kiszemelve felszínre hozza a település véráztatta múltjának titkait.",
+      "popularity": 564.144,
+      "poster_path": "/705hEInUnN0fC0prFiUm73CVLvu.jpg",
+      "release_date": "2022-01-12",
+      "title": "Sikoly",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 1307
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oZtoyj3rhOST8FUtIXUqblIYmCv.jpg",
+      "genre_ids": [
+        10752,
+        36,
+        18
+      ],
+      "id": 661231,
+      "original_language": "en",
+      "original_title": "Operation Mincemeat",
+      "overview": "A második világháborúban két hírszerző tiszt különös és egyben megdöbbentő cselhez folyamodik a német csapatok átveréséhez.",
+      "popularity": 473.266,
+      "poster_path": "/tfdfh1mK24VujxT5z11732asxdR.jpg",
+      "release_date": "2022-04-01",
+      "title": "Operation Mincemeat",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 140
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yzH5zvuEzzsHLZnn0jwYoPf0CMT.jpg",
+      "genre_ids": [
+        53,
+        28
+      ],
+      "id": 760926,
+      "original_language": "en",
+      "original_title": "Gold",
+      "overview": "Két utazó valószínűleg a valaha talált legnagyobb aranyrögbe botlik a sivatag közepén. A mozdíthatatlan rög felbecsülhetetlen értékkel kecsegtet, azonban megfelelő felszerelés és gépek nélkül nem tudják kiemelni a földből. Míg egyikük útnak indul, hogy meghozza a szükséges eszközöket, a másik férfi az arany mellett marad, és – dacolva a zord sivatagi klímával, a rá leselkedő farkasokkal valamint azon kétségeivel, hogy esetleg sorsára hagyták – várja a segítséget, ami talán sosem érkezik meg.",
+      "popularity": 428.851,
+      "poster_path": "/ApcsCFkE4kWbXVepZME3TF8c5of.jpg",
+      "release_date": "2022-01-13",
+      "title": "Arany",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 250
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg",
+      "genre_ids": [
+        28,
+        18
+      ],
+      "id": 361743,
+      "original_language": "en",
+      "original_title": "Top Gun: Maverick",
+      "overview": "A bizonytalan jövővel szemezve és a múlt árnyaitól kísérve Maverick kénytelen megküzdeni legbelsőbb félelmeivel, és ez a küzdelem egy olyan küldetésben csúcsosodik ki, amely során a legnagyobb áldozatot kell meghoznia azoknak, akiket végül kiválasztanak a repülésre.",
+      "popularity": 426.787,
+      "poster_path": "/gE5QXHsIZhM8m2LmIU6Elhhcq8w.jpg",
+      "release_date": "2022-05-24",
+      "title": "Top Gun: Maverick",
+      "video": false,
+      "vote_average": 8.7,
+      "vote_count": 17
+    }
+  ],
+  "total_pages": 64,
+  "total_results": 1268
+}

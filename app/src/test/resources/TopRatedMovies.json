@@ -1,0 +1,397 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/iNh3BivHyg5sQRPP1KOkzguEX0H.jpg",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "id": 278,
+      "original_language": "en",
+      "original_title": "The Shawshank Redemption",
+      "overview": "1946-ban egy Andy Dufresne nevű bankárt - noha makacsul hangoztatja ártatlanságát - kettős gyilkosság elkövetése miatt életfogytiglani börtönbüntetésre ítélnek. Dufresne egy Maine állambeli büntetés-végrehajtó intézetbe kerül és hamar meg kell ismerkedjen a börtönélet kegyetlen mindennapjaival, a szadista börtönszemélyzettel, a szinte elállatiasodott rabokkal. Azonban Andy nem törik meg. A bankéletben szerzett tapasztalatai segítségével elnyeri az őrök kegyét és azzal, hogy elvállalja egyik rabtársa illegális akcióiból származó bevételeinek könyvelését, kivívja \"társai\" elismerését is. Cserébe viszont lehetőséget kap a börtön könyvtárának a fejlesztésére, ezzel némi emberi méltóságot csempészve a keserű körülmények között élő rabok mindennapjaiba.",
+      "popularity": 63.491,
+      "poster_path": "/oBZ36R1z6Ner9TYmZeSWPhHwF7r.jpg",
+      "release_date": "1994-09-23",
+      "title": "A remény rabjai",
+      "video": false,
+      "vote_average": 8.7,
+      "vote_count": 21431
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/90ez6ArvpO8bvpyIngBuwXOqJm5.jpg",
+      "genre_ids": [
+        35,
+        18,
+        10749
+      ],
+      "id": 19404,
+      "original_language": "hi",
+      "original_title": "दिलवाले दुल्हनिया ले जायेंगे",
+      "overview": "Simran, a Londonban élő, konzervatív pandzsábi családban nevelkedő lány kikönyörgi édesapjánál, hogy mielőtt előre elrendezett házassággal férjhez adnák régóta kinézett indiai vőlegényéhez, elmehessen a barátnőivel egy egyhónapos európai vonatos körutazásra. Az úton megismerkedik Rajjal, a szintén Londonban élő, léha, felelőtlen indiai fiúval, akit rettentő ellenszenvesnek talál. A kalandos út során azonban a két fiatal egyre jobban megismeri egymást, és az út végére rájönnek, hogy egymásba szerettek. Ám Simrant otthon várja a szigorú apa, a soha nem látott, Pandzsábban élő vőlegény és az indiai szokások szerint elrendezett, hagyományos esküvő.",
+      "popularity": 18.583,
+      "poster_path": "/2CAL2433ZeIihfX1Hb2139CX0pW.jpg",
+      "release_date": "1995-10-20",
+      "title": "Aki bátor, azé a menyasszony",
+      "video": false,
+      "vote_average": 8.7,
+      "vote_count": 3649
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/AbgEQO2mneCSOc8CSnOMa8pBS8I.jpg",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "id": 238,
+      "original_language": "en",
+      "original_title": "The Godfather",
+      "overview": "Vito Corleone mindennél fontosabbnak tartja a családot. Emellett a New York-i olasz maffia rettegett keresztapja, aki élet és halál kérdéséről dönt. Lassan azonban gondolnia kell arra, hogy melyik fiának adja át a hatalmat. Sonny forrófejű, Fredo komolytalan, Michael pedig háborús hős, aki mostanáig távol tartotta magát az üzlettől. A kábítószer azonban szembefordítja egymással a régi és a feltörekvő gengsztereket.",
+      "popularity": 67.214,
+      "poster_path": "/3wKAcgLPLhzvcdC4MAJDe7QMek7.jpg",
+      "release_date": "1972-03-14",
+      "title": "A keresztapa",
+      "video": false,
+      "vote_average": 8.7,
+      "vote_count": 15976
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/wp3vpSWAIjKSEeYb8F5NSZfONqw.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878,
+        35
+      ],
+      "id": 545611,
+      "original_language": "en",
+      "original_title": "Everything Everywhere All at Once",
+      "overview": "Megállíthatatlan fenyegetés készül elsöpörni az összes multiverzumot… de talán nincs minden veszve. A létezésünket fenyegető sötétségnek ugyanis van valaki, aki képes útját állni: egy középkorú, kínai bevándorló, Evelyn. A bökkenő csak az, hogy a mosodatulajdonosnak jelenleg nincs ideje ilyen apróságokon aggódni, mivel azzal van elfoglalva, hogy időre befejezze az adóbevallását.",
+      "popularity": 335.704,
+      "poster_path": "/4nbQhDoKMvNwuEkjE3MSnpoTdBP.jpg",
+      "release_date": "2022-03-24",
+      "title": "Minden, mindenhol, mindenkor",
+      "video": false,
+      "vote_average": 8.7,
+      "vote_count": 284
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/loRmRzQXZeqG78TqZuyvSlEQfZb.jpg",
+      "genre_ids": [
+        18,
+        36,
+        10752
+      ],
+      "id": 424,
+      "original_language": "en",
+      "original_title": "Schindler's List",
+      "overview": "Egyetlen ember is képes lehet arra, hogy a körülmények ellenére megváltoztassa a dolgok menetét. A mondás igazát mi sem bizonyítja jobban, mint Oskar Schindler története. A film főhőse, Oskar Schindler született üzletember és szerencsejátékos. A második világháború legelején elkerül a megszállt Lengyelországba és azonnal megérzi, milyen hatalmas üzleti lehetőségek nyílhatnak meg előtte. Baráti kapcsolatok és némi ügyeskedés révén megszerez magának egy gyárat - a Deutsche Emailware Fabrikot - és nem győz eleget tenni a beözönlő megrendeléseknek.",
+      "popularity": 45.345,
+      "poster_path": "/zoBI1BEtzl8usLAWA3ZN1j4BEMF.jpg",
+      "release_date": "1993-11-30",
+      "title": "Schindler listája",
+      "video": false,
+      "vote_average": 8.6,
+      "vote_count": 12765
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/poec6RqOKY9iSiIUmfyfPfiLtvB.jpg",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "id": 240,
+      "original_language": "en",
+      "original_title": "The Godfather: Part II",
+      "overview": "Vito Corleone halála után Michael lép apja örökébe. A férfi szerteágazó kapcsolatrendszerének felhasználásával új profilt alakít ki a családja vezette maffiának. Hamarosan azonban újabb összeütközések és árulások veszik kezdetüket, amikben az új vezetőnek helyt kell állnia. S Michael nem habozik a legveszedelmesebb fegyverekhez nyúlni, hogy hatalmát, befolyását és pénzét megtartsa, s védelmet biztosítson a családjának. Eközben az is kiderül, hogy néhai apja hogyan alapozta meg a Corleone család hírnevét.",
+      "popularity": 49.167,
+      "poster_path": "/zoZMbB3595RQDjAxBg61PyG7qWO.jpg",
+      "release_date": "1974-12-20",
+      "title": "A keresztapa 2.",
+      "video": false,
+      "vote_average": 8.6,
+      "vote_count": 9631
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ryr532va3rN7MADPAO2updA4Akz.jpg",
+      "genre_ids": [
+        10751,
+        18
+      ],
+      "id": 667257,
+      "original_language": "es",
+      "original_title": "Cosas imposibles",
+      "overview": "",
+      "popularity": 39.28,
+      "poster_path": "/eaf7GQj0ieOwm08rrvjJQNbN0kN.jpg",
+      "release_date": "2021-06-17",
+      "title": "Cosas imposibles",
+      "video": false,
+      "vote_average": 8.6,
+      "vote_count": 237
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3RMLbSEXOn1CzLoNT7xFeLfdxhq.jpg",
+      "genre_ids": [
+        10749,
+        16
+      ],
+      "id": 372754,
+      "original_language": "ja",
+      "original_title": "同級生",
+      "overview": "örténetünk főhőse Kusakabe Hikaru, egy, csak fiúk által látogatott iskola tanulója. Az osztály, ahová jár, kórusfesztiválon akar részt venni, amire szorgalmasan próbálnak is. Azonban egy alkalommal Kusakabe-kun észreveszi, hogy az osztálytársa, a szemüveges Sajou Rihito nem énekel a többiekkel együtt. Először azt hiszi, a fiú nem szeret énekelni, ám eme feltételezését cáfolandó hamarosan rajtakapja Sajout egy elhagyatott osztályteremben, amint a dalt dúdolgatja. Gondolkodás nélkül szólítja meg és kezd el neki segíteni a gyakorlásban, ezzel pedig kezdetét veszi kettejük közös története.",
+      "popularity": 12.032,
+      "poster_path": "/7byisQANRFHf9SC60n5PaLywuMa.jpg",
+      "release_date": "2016-02-20",
+      "title": "Doukyuusei",
+      "video": false,
+      "vote_average": 8.6,
+      "vote_count": 228
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hZth9NCeXvvO7Xi98d8q34e1Ier.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        14
+      ],
+      "id": 129,
+      "original_language": "ja",
+      "original_title": "千と千尋の神隠し",
+      "overview": "Chihiro, a tízéves, önfejű kislány meg van győződve arról, hogy az egész világ körülötte forog - épp ezért képtelen belenyugodni abba, hogy szüleivel új városba költözik, és csalódottságát meg sem próbálja leplezni az utazás alatt. Amikor az erdőben eltévedve egy különös zsákutca végére érnek, a kis család rábukkan egy sötét alagútra, amelynek másik végén szellemváros fogadja őket. Az üres utcákon fejedelmi lakomától roskadoznak az asztalok: az éhes szülők mohón a finom ételekre vetik magukat, ám hamarosan disznóvá változnak, amikor a városban felbukkannak a valódi vacsoravendégek. Az eldugott mesevilág lakói ősi istenek és más csodalények, uralkodója pedig Yubaba, a gonosz boszorkány. Chihiro csak akkor mentheti meg szüleit, ha hasznossá teszi magát Szellemországban és munkát talál magának a banya hatalmas fürdőházában.",
+      "popularity": 76.533,
+      "poster_path": "/8TEs6twIANAc2qiU8m17JO8Ujcx.jpg",
+      "release_date": "2001-07-20",
+      "title": "Chihiro Szellemországban",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 12834
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/mMtUybQ6hL24FXo0F3Z4j2KG7kZ.jpg",
+      "genre_ids": [
+        10749,
+        16,
+        18
+      ],
+      "id": 372058,
+      "original_language": "ja",
+      "original_title": "君の名は。",
+      "overview": "A csodáról és szerelemről szóló történet főhőse Mitsuha és Taki. Mitsuha egy középiskolás lány, aki a húgával együtt a nagymamájával lakik egy pici városban mélyen a hegyek között. Mitsuha az itteni polgármester lánya, aki nagyon szigorú, főleg amiatt, hogy közelednek a választások, és szeretné, hogy a lánya példásan viselkedjen. A tradícióktól szorongatott Mitsuha nagyvárosi életről álmodozik. Tokio centrumában él Taki, a középiskolás fiú, aki ideje nagy részét a barátaival tölti, vagy egy olasz étteremben pincérkedik, de igazi szenvedélye az építészet és a képzőművészet. Egy nap Mitsuha azt álmodja, hogy ő egy fiú Tokio belvárosában, Takinak pedig szintén nagyon élénk álma van arról, hogy ő egy vidéki lány messze a hegyek között.",
+      "popularity": 204.583,
+      "poster_path": "/5swShbm8umrjP7yZScYlUDaaIDD.jpg",
+      "release_date": "2016-08-26",
+      "title": "A neved",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 8699
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/w2uGvCpMtvRqZg6waC1hvLyZoJa.jpg",
+      "genre_ids": [
+        10749
+      ],
+      "id": 696374,
+      "original_language": "en",
+      "original_title": "Gabriel's Inferno",
+      "overview": "A csábítás, a tiltott szerelem és a megváltás érdekfeszítő és bűnös felfedezése, Gabriel Inferno-ja egy magával ragadó és vadul szenvedélyes mese arról, hogy egy ember elmenekül saját személyes poklából, miközben megpróbálja kivívni a lehetetlent - megbocsátást és szeretetet.",
+      "popularity": 11.262,
+      "poster_path": "/oyG9TL7FcRP4EZ9Vid6uKzwdndz.jpg",
+      "release_date": "2020-05-29",
+      "title": "Pokoli erény",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 2245
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jtAI6OJIWLWiRItNSZoWjrsUtmi.jpg",
+      "genre_ids": [
+        10749
+      ],
+      "id": 724089,
+      "original_language": "en",
+      "original_title": "Gabriel's Inferno: Part II",
+      "overview": "",
+      "popularity": 13.931,
+      "poster_path": "/8Rxutea68d940kg44Box5gFmKcF.jpg",
+      "release_date": "2020-07-31",
+      "title": "Gabriel's Inferno: Part II",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 1411
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg",
+      "genre_ids": [
+        35,
+        53,
+        18
+      ],
+      "id": 496243,
+      "original_language": "ko",
+      "original_title": "기생충",
+      "overview": "Ki-taek családja igazi semmirekellőkből áll. Ők mindig a könnyebbik utat választják – bármit megtesznek, csak dolgozni ne kelljen. Irigykedve nézik a Park család fényűző életmódját, és ördögi tervet eszelnek ki, hogy a közelükbe férkőzzenek. Azonban természetesen semmi sem a családfő tervei szerint alakul.",
+      "popularity": 79.985,
+      "poster_path": "/kIvu99VgwSikNBVzcfGTF837rHc.jpg",
+      "release_date": "2019-05-30",
+      "title": "Élősködők",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 13704
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qqHQsStV6exghCM7zbObuYBiYxw.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 389,
+      "original_language": "en",
+      "original_title": "12 Angry Men",
+      "overview": "A tizenkét esküdtnek, látszólag sima gyilkossági ügyben kell ítéletet hoznia. A vádlott bűnösségét annyi tökéletesen egybevágó tény bizonyítja, hogy az egyik esküdtben felmerül a gyanú: a dolog túlságosan is egyszerű, és nem ártana alaposabban megbeszélni a tárgyalóteremben hallottakat. Kezdetben tizenegyen vannak egy ellen, ám a helyzet fokozatosan változni kezd, és percek múlva már nem is egy gyilkossági ügyről szól ez a feszült és izgalmas, eredetileg tévéjátéknak szánt darab, hanem a bennünk lévő előítéletekről, félelmekről, szerepeinkről, vagy éppen rejtegetni kívánt gyöngeségeinkről, egyszóval az Emberről.",
+      "popularity": 24.139,
+      "poster_path": "/7MMQ3gxh1DKez6qIUSxdhpwLCKF.jpg",
+      "release_date": "1957-04-10",
+      "title": "Tizenkét dühös ember",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 6422
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg",
+      "genre_ids": [
+        14,
+        18,
+        80
+      ],
+      "id": 497,
+      "original_language": "en",
+      "original_title": "The Green Mile",
+      "overview": "Paul Edgecomb börtönőrként szolgál a Cold Mountain fegyház siralomházában a múlt század harmincas éveiben. Az E blokkban halálraítéltek várják, hogy végig menjenek a halálsoron - a folyosón, amely a villamosszékhez vezet. Edgecomb úgy gondolja, már semmilyen meglepetés sem érheti. Ám minden megváltozik, amikor új rab érkezik az E blokkba. Az óriás termetű fekete férfit, John Coffeyt az esküdtszék két fehér gyermek meggyilkolásáért ítélte halálra. A férfi azonban egyáltalán nem tűnik gyilkosnak, sőt, egészen különös képességekkel rendelkezik.",
+      "popularity": 86.885,
+      "poster_path": "/bYVylUcUSqfYrF4bjsNZWVLw3Ub.jpg",
+      "release_date": "1999-12-10",
+      "title": "Halálsoron",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 13934
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6fA9nie4ROlkyZAUlgKNjGNCbHG.jpg",
+      "genre_ids": [
+        18,
+        28,
+        80,
+        53
+      ],
+      "id": 155,
+      "original_language": "en",
+      "original_title": "The Dark Knight",
+      "overview": "Batman valamint két társa, egy rendőr és egy ügyész mindent elkövet, hogy megtisztítsa Gotham City utcáit a banditáktól. Már kezdik azt hinni, önként vállalt feladatukat siker koronázhatja, amikor megjelenik a bűnözők között valaki, aki minden elődjénél ravaszabb és veszélyesebb. Úgy hívják: Joker. A városban ettől kezdve a félelem az úr: elszabadul a korlátlan, értelmetlen, kivédhetetlennek tűnő gonoszság.",
+      "popularity": 90.537,
+      "poster_path": "/wzJZ6tLRMwhStehrcjSyiVGnn3R.jpg",
+      "release_date": "2008-07-14",
+      "title": "A sötét lovag",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 27564
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fQq1FWp1rC89xDrRMuyFJdFUdMd.jpg",
+      "genre_ids": [
+        10749,
+        35
+      ],
+      "id": 761053,
+      "original_language": "en",
+      "original_title": "Gabriel's Inferno: Part III",
+      "overview": "",
+      "popularity": 27.215,
+      "poster_path": "/uqmTxOP3gNl5MWRt1wlrUnzTphM.jpg",
+      "release_date": "2020-11-19",
+      "title": "Gabriel's Inferno: Part III",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 963
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lp6SmwyNRspEYkkLXFEVuNlCw77.jpg",
+      "genre_ids": [
+        16,
+        14,
+        10749,
+        18
+      ],
+      "id": 533514,
+      "original_language": "ja",
+      "original_title": "劇場版 ヴァイオレット・エヴァーガーデン",
+      "overview": "",
+      "popularity": 18.981,
+      "poster_path": "/mpNG6z33xOtUWuOU83BE0bvorxi.jpg",
+      "release_date": "2020-09-18",
+      "title": "Violet Evergarden: A film",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 227
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
+      "genre_ids": [
+        53,
+        80
+      ],
+      "id": 680,
+      "original_language": "en",
+      "original_title": "Pulp Fiction",
+      "overview": "Adott két idősödő, szabad szájú, tökös, szimpatikus gengszter, Vincent és Jules, akik igyekeznek főnöküknek visszaszerezni egy aktatáskát. Ehhez persze meg kell ölniük pár embert, de ez az egyszerű bérgyilkosokkal gyakran megesik. Jules a rá célzott golyókat csodával határos módon elkerüli, s ezt jelnek tekintvén úgy dönt, felhagy eddigi életével. Társának viszont el kell vinnie szórakozni a gengszterfőnök feleségét... Van továbbá egy boxoló, Butch, aki a hírhedt marffiafőnök, Marselleus Wallace átvágását tervezi. Hogy-hogy nem, odáig fajul a történet, hogy végül már inkább a megmentésére készül, mint a lelövésére... Nem utolsósorban, pedig, van egy piti rabló-párosunk is, akik éppen egy étterem kirablására készülnek. Ám ott reggelizik Vincent és Jules.",
+      "popularity": 56.203,
+      "poster_path": "/i8N31RHT6WaBXSicxABMRyBH4yQ.jpg",
+      "release_date": "1994-09-10",
+      "title": "Ponyvaregény",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 23154
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lXhgCODAbBXL5buk9yEmTpOoOgR.jpg",
+      "genre_ids": [
+        12,
+        14,
+        28
+      ],
+      "id": 122,
+      "original_language": "en",
+      "original_title": "The Lord of the Rings: The Return of the King",
+      "overview": "Gandalf Pipinnel Gondorba vágtat, hogy Denethort felkészítse Szauron túlerejével szemben. Théoden király összevonja seregeit Gondor segélyhívására. Aragorn végül vállalja sorsát, és hű társaival harcba szólítja a hegyek közt élő holtakat. Középfölde sorsa azonban egészen máshol fog eldőlni. Frodó és Samu a Hatalom gyűrűjével Mordor sötét útvesztőit járja. De minél közelebb kerülnek a Végzet hegyéhez, Frodót annál jobban húzza a Gyűrű szörnyű súlya. A világ sorsa egy apró hobbit kezében van, aki kétséges, hogy ellen tud állni a legnagyobbakat is legyőző kísértésnek.",
+      "popularity": 90.881,
+      "poster_path": "/5AjfQsNm7eJKAaYJZq23DMJvA5d.jpg",
+      "release_date": "2003-12-01",
+      "title": "A Gyűrűk Ura: A király visszatér",
+      "video": false,
+      "vote_average": 8.5,
+      "vote_count": 19536
+    }
+  ],
+  "total_pages": 499,
+  "total_results": 9963
+}

@@ -152,7 +152,7 @@ private fun MovieDetailsBody(
                 color = colorResource(R.color.bluegray_800).copy(alpha = 0.7F),
             ) {
                 ConstraintLayout {
-                    val (arrow, title) = createRefs()
+                    val (arrow, titleMovie) = createRefs()
 
                     Icon(
                         imageVector = Icons.Filled.ArrowBack,
@@ -172,7 +172,7 @@ private fun MovieDetailsBody(
                         overflow = TextOverflow.Ellipsis,
                         maxLines = 1,
                         modifier = Modifier
-                            .constrainAs(title) {
+                            .constrainAs(titleMovie) {
                                 centerHorizontallyTo(parent)
                                 centerVerticallyTo(parent)
                             }

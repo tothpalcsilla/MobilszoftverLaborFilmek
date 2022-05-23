@@ -103,7 +103,6 @@ class ListRepository @Inject constructor(
         menuIndex: Int,
         onStart: () -> Unit,
         onCompletion: () -> Unit,
-        onError: (String) -> Unit,
     ): Flow<List<Movie>> = flow {
         getMovies(menuIndex)
         emit(movieList)

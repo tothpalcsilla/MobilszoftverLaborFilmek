@@ -28,7 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ListActivity : ComponentActivity() {
 
     @VisibleForTesting
-    private val moviesViewModel: ListViewModel by viewModels()
+    internal val moviesViewModel: ListViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
