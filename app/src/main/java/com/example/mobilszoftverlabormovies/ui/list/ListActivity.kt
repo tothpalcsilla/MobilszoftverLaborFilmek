@@ -2,8 +2,6 @@ package com.example.mobilszoftverlabormovies.ui.list
 
 import android.content.Context
 import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -20,7 +18,11 @@ import com.example.mobilszoftverlabormovies.Config
 import com.example.mobilszoftverlabormovies.ui.details.MovieDetails
 import com.example.mobilszoftverlabormovies.ui.movies.Movies
 import com.google.accompanist.insets.ProvideWindowInsets
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
+
 
 //import androidx.hilt.navigation.compose.hiltViewModel
 
@@ -30,8 +32,13 @@ class ListActivity : ComponentActivity() {
     @VisibleForTesting
     internal val moviesViewModel: ListViewModel by viewModels()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Obtain the FirebaseAnalytics instance.
+        Config.firebaseAnalytics = Firebase.analytics
+
         Config.connectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         setContent {
             MoviesMainScreen()
@@ -118,6 +125,11 @@ fun MoviesMainScreen() {
                 MovieDetails(movieId = movieId, viewModel = hiltViewModel()) {
                     navController.navigateUp()
                 }
+
+                val bundle = Bundle()
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, movieId.toString())
+                bundle.putString(FirebaseAnalytics.Param.ITEM_LIST_ID, movieId.toString())
+                Config.firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM, bundle)
             }
         }
     }

@@ -1,6 +1,7 @@
 package com.example.mobilszoftverlabormovies
 
 import android.net.ConnectivityManager
+import com.google.firebase.analytics.FirebaseAnalytics
 
 class Config {
     companion object {
@@ -14,6 +15,7 @@ class Config {
 
         var isOnline: Boolean = false
         lateinit var connectivityManager: ConnectivityManager
+        lateinit var firebaseAnalytics: FirebaseAnalytics
     }
 
 

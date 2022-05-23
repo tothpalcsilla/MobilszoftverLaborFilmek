@@ -5,7 +5,6 @@ import com.example.mobilszoftverlabormovies.model.network.MovieListApiResponseMo
 import com.example.mobilszoftverlabormovies.utils.MockTestUtil.mockMovieList
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import junit.framework.Assert
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.runBlocking
